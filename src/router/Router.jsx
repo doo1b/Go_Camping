@@ -13,7 +13,7 @@ const Router = () => {
         <Route path="/" element={<IndexPage />} />
         <Route path="/main" element={<MainPage />} />
         <Route path="/searchresult" element={<SearchResultPage />} />
-        <Route path="/detail" element={<DetailPage />} />
+        <Route path="/detail/:contentId" element={<DetailPage />} />
         <Route path="/guide" element={<GuidePage />} />
       </Routes>
     </BrowserRouter>
