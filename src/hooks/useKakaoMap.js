@@ -2,22 +2,31 @@ import { useEffect, useState } from "react";
 import kakaoService from "../services/kakaoService";
 
 export const useKakaoMap = () => {
-  const [kakaoMap, setKakaoMap] = useState(null);
-  const [currentLocation, setCurrentLocation] = useState(null);
+  const [location, setLocation] = useState({
+    center: {
+      lat: 33.450701,
+      lng: 126.570667
+    },
+    position: {
+      lat: 33.450701,
+      lng: 126.570667
+    },
+    isPanto: true,
+    errMsg: null,
+    isLoading: true
+  });
 
-  const fetchKakaoMap = async () => {
-    const { map, locPosition } = await kakaoService.initialMap();
-    setKakaoMap(map);
-    setCurrentLocation(locPosition);
+  const getCurrentLocation = () => {
+    kakaoService.getCurrentLocation(setLocation);
   };
 
   useEffect(() => {
-    fetchKakaoMap();
+    getCurrentLocation();
   }, []);
 
   return {
-    kakaoMap,
-    currentLocation,
-    setInitialLocation: kakaoService.setInitialLocation
+    location,
+    setLocation,
+    getCurrentLocation
   };
 };

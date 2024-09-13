@@ -5,16 +5,12 @@ import LocationDisplay from "../../components/mainpage/LocationDisplay";
 import SearchDisplay from "../../components/mainpage/SearchDisplay";
 
 const MainPage = () => {
-  const { kakaoMap, currentLocation, setInitialLocation } = useKakaoMap();
-
-  const onCurrentLocation = () => {
-    setInitialLocation(kakaoMap, currentLocation);
-  };
+  const { location, setLocation, getCurrentLocation } = useKakaoMap();
 
   return (
     <section className="font-preten400 text-sm">
-      <KakaoMap />
-      <LocationDisplay onCurrentLocation={onCurrentLocation}/>
+      <KakaoMap location={location} setLocation={setLocation}/>
+      <LocationDisplay getCurrentLocation={getCurrentLocation} />
       <WeatherDisplay />
       <SearchDisplay />
     </section>
