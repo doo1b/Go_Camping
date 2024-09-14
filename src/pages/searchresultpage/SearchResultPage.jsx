@@ -5,29 +5,37 @@ const SearchResultPage = () => {
       id: 1,
       name: "Seoul Campground",
       introduction: "서울 캠프그라운드입니다.",
+      address: "서울특별시 중구 서울로 110",
       lat: 37.5665,
-      Ing: 126.978
+      Ing: 126.978,
+      phone: "02-1111-1111"
     },
     {
       id: 2,
       name: "Busan Mountain Camp",
       introduction: "부산 마운트 캠프입니다.",
+      address: "부산광역시 해운대구 산길로 35",
       lat: 35.1796,
-      Ing: 129.0756
+      Ing: 129.0756,
+      phone: "051-2222-2222"
     },
     {
       id: 3,
       name: "Jeju Island Camping",
       introduction: "제주 아일랜드 캠핑입니다.",
+      address: "제주특별자치도 제주시 오름길 22",
       lat: 33.4996,
-      Ing: 126.5312
+      Ing: 126.5312,
+      phone: "064-3333-3333"
     },
     {
       id: 4,
       name: "Gangwon Valley Camp",
       introduction: "강원 밸리 캠프입니다.",
+      address: "강원도 강릉시 계곡로 18",
       lat: 37.8228,
-      Ing: 128.1555
+      Ing: 128.1555,
+      phone: "033-4444-4444"
     }
   ];
   return (
