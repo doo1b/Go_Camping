@@ -1,20 +1,21 @@
-import React from "react";
+import React, { useCallback } from "react";
 import { Map, MapMarker } from "react-kakao-maps-sdk";
+import { useLocationStore } from "../../store/locationStore";
 
-const KakaoMap = ({ location, setLocation }) => {
-
+const KakaoMap = () => {
+  const { location, setLocation } = useLocationStore();
+  
   // 지도 Drag 이벤트
-  const changeCurrentLocation = (map) => {
+  const changeCurrentLocation = useCallback((map) => {
     const latlng = map.getCenter();
 
-    setLocation((prev) => ({
-      ...prev,
+    setLocation({
       center: {
         lat: latlng.getLat(),
         lng: latlng.getLng()
       }
-    }));
-  };
+    });
+  }, []);
 
   return (
     <Map

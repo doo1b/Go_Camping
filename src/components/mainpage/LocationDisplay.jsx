@@ -1,7 +1,10 @@
 import React from "react";
 import Location from "../../assets/Location";
+import { useKakaoMap } from "../../hooks/useKakaoMap";
 
-const LocationDisplay = ({getCurrentLocation}) => {
+const LocationDisplay = () => {
+  const { getCurrentLocation } = useKakaoMap();
+  
   return (
     <button
       onClick={getCurrentLocation}

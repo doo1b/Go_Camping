@@ -1,32 +1,20 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect } from "react";
 import kakaoService from "../services/kakaoService";
+import { useLocationStore } from "../store/locationStore";
 
 export const useKakaoMap = () => {
-  const [location, setLocation] = useState({
-    center: {
-      lat: 33.450701,
-      lng: 126.570667
-    },
-    position: {
-      lat: 33.450701,
-      lng: 126.570667
-    },
-    isPanto: true,
-    errMsg: null,
-    isLoading: true
-  });
+  const setLocation = useLocationStore((state) => state.setLocation);
 
-  const getCurrentLocation = () => {
+  // 현재 위치 가져오기
+  const getCurrentLocation = useCallback(() => {
     kakaoService.getCurrentLocation(setLocation);
-  };
+  }, []);
 
   useEffect(() => {
     getCurrentLocation();
   }, []);
 
   return {
-    location,
-    setLocation,
     getCurrentLocation
   };
 };
