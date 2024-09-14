@@ -5,7 +5,8 @@ export default {
     extend: {
       colors: {
         campblue: "#1D3B41",
-        campbrown: "#6B3D1A"
+        campbrown: "#6B3D1A",
+        background40: "rgba(0, 0, 0, 0.40)"
       },
       fontFamily: {
         preten100: "Pretendard-Thin",

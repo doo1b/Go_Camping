@@ -15,7 +15,7 @@ const KakaoMap = () => {
         lng: latlng.getLng()
       }
     });
-  }, []);
+  }, [setLocation]);
 
   return (
     <Map
