@@ -1,10 +1,34 @@
 const SearchResultPage = () => {
   // 임의의 캠핑장 데이터 생성
   const campingData = [
-    { id: 1, name: "Seoul Campground", lat: 37.5665, Ing: 126.978 },
-    { id: 2, name: "Busan Mountain Camp", lat: 35.1796, Ing: 129.0756 },
-    { id: 3, name: "Jeju Island Camping", lat: 33.4996, Ing: 126.5312 },
-    { id: 4, name: "Gangwon Valley Camp", lat: 37.8228, Ing: 128.1555 }
+    {
+      id: 1,
+      name: "Seoul Campground",
+      introduction: "서울 캠프그라운드입니다.",
+      lat: 37.5665,
+      Ing: 126.978
+    },
+    {
+      id: 2,
+      name: "Busan Mountain Camp",
+      introduction: "부산 마운트 캠프입니다.",
+      lat: 35.1796,
+      Ing: 129.0756
+    },
+    {
+      id: 3,
+      name: "Jeju Island Camping",
+      introduction: "제주 아일랜드 캠핑입니다.",
+      lat: 33.4996,
+      Ing: 126.5312
+    },
+    {
+      id: 4,
+      name: "Gangwon Valley Camp",
+      introduction: "강원 밸리 캠프입니다.",
+      lat: 37.8228,
+      Ing: 128.1555
+    }
   ];
   return (
     <div className="container box-border gap-5 m-10 mx-auto gap-y-4">
