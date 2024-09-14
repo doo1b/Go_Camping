@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 // 임의의 캠핑장 데이터 생성
 const campingData = [
   {
@@ -39,6 +41,26 @@ const campingData = [
 ];
 
 const SearchResultPage = () => {
+  const [keyword, setKeyword] = useState("");
+  const [filteredCamps, setFilteredCamps] = useState([]);
+
+  // 검색어를 바탕으로 캠핑장을 필터링하는 함수
+  const handleSearch = () => {
+    const results = campingData.filter((camp) =>
+      camp.name.toLowerCase().includes(keyword.toLowerCase())
+    );
+    // 필터링된 결과를 setFilteredCamps에 저장
+    setFilteredCamps(results);
+  };
+
+  // 검색 입력창에서 Enter키를 눌렀을 때, 검색을 실행하는 함수
+  const handleKeyPress = (e) => {
+    if (e.key === "Enter") {
+      // Enter를 눌렀을 때 검색 함수 호출
+      handleSearch();
+    }
+  };
+
   return (
     <div className="container box-border gap-5 m-10 mx-auto gap-y-4">
       <div className="p-5">
