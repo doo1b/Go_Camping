@@ -80,50 +80,21 @@ const SearchResultPage = () => {
           🔍
         </button>
       </div>
-      <div className="flex gap-5">
-        <div className="flex items-center justify-center h-32 border-2 w-28 rounded-xl">
-          <p>캠핑장 사진</p>
-        </div>
-        <div className="p-3 border-2 rounded-xl w-96">
-          <p>캠핑장 이름</p>
-          <p>한 줄 소개</p>
-          <p>캠핑장 주소</p>
-          <p>전화번호</p>
-        </div>
-      </div>
-      <div className="flex gap-5">
-        <div className="flex items-center justify-center h-32 border-2 w-28 rounded-xl">
-          <p>캠핑장 사진</p>
-        </div>
-        <div className="p-3 border-2 rounded-xl w-96">
-          <p>캠핑장 이름</p>
-          <p>한 줄 소개</p>
-          <p>캠핑장 주소</p>
-          <p>전화번호</p>
-        </div>
-      </div>
-      <div className="flex gap-5">
-        <div className="flex items-center justify-center h-32 border-2 w-28 rounded-xl">
-          <p>캠핑장 사진</p>
-        </div>
-        <div className="p-3 border-2 rounded-xl w-96">
-          <p>캠핑장 이름</p>
-          <p>한 줄 소개</p>
-          <p>캠핑장 주소</p>
-          <p>전화번호</p>
-        </div>
-      </div>
-      <div className="flex gap-5">
-        <div className="flex items-center justify-center h-32 border-2 w-28 rounded-xl">
-          <p>캠핑장 사진</p>
-        </div>
-        <div className="p-3 border-2 rounded-xl w-96">
-          <p>캠핑장 이름</p>
-          <p>한 줄 소개</p>
-          <p>캠핑장 주소</p>
-          <p>전화번호</p>
-        </div>
-      </div>
+      {filteredCamps.length > 0 && (
+        <ul className="w-full max-w-4xl mt-6 space-y-4">
+          {filteredCamps.map((camp) => {
+            <li
+              key={camp.id}
+              className="p-4 bg-white border border-gray-300 rounded-lg shadow-md"
+            >
+              <h3>{camp.name}</h3>
+              <h3>{camp.description}</h3>
+              <h3>{camp.address}</h3>
+              <h3>{camp.phone}</h3>
+            </li>;
+          })}
+        </ul>
+      )}
     </div>
   );
 };
