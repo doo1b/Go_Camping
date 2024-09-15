@@ -6,8 +6,7 @@ const Header = () => {
   const [search, setsearch] = useState("");
   const onChange = (e) => {
     setsearch(e.target.value);
-    // 검색기능 구현 예정
-    // 헤더 페이지 09/15 (09시.20분) - 작업중
+    // 검색 기능 구현 중
   };
   return (
     <header className="bg-campblue p-4 flex items-center justify-between">
@@ -19,7 +18,12 @@ const Header = () => {
       </div>
       <div className="flex-grow text-center">날씨 데이터</div>
       <div className="flex-shrink-0 flex items-center space-x-4">
-        <Link className="text-blue-500 hover:underline">
+        <Link
+          to="guide"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-blue-500 hover:underline"
+        >
           가이드 영상으로 가기
         </Link>
       </div>

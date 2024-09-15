@@ -4,18 +4,21 @@ import { useLocationStore } from "../../store/locationStore";
 
 const KakaoMap = () => {
   const { location, setLocation } = useLocationStore();
-  
-  // 지도 Drag 이벤트
-  const changeCurrentLocation = useCallback((map) => {
-    const latlng = map.getCenter();
 
-    setLocation({
-      center: {
-        lat: latlng.getLat(),
-        lng: latlng.getLng()
-      }
-    });
-  }, [setLocation]);
+  // 지도 Drag 이벤트
+  const changeCurrentLocation = useCallback(
+    (map) => {
+      const latlng = map.getCenter();
+
+      setLocation({
+        center: {
+          lat: latlng.getLat(),
+          lng: latlng.getLng()
+        }
+      });
+    },
+    [setLocation]
+  );
 
   return (
     <Map
