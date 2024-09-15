@@ -1,7 +1,7 @@
 import { create } from "zustand";
 
 const useGuideStore = create((set) => ({
-  isOpen: true,
+  isOpen: false,
   searchKeyword: "",
   modalOpen: () => set({ isOpen: true }),
   modalClose: () => set({ isOpen: false }),
