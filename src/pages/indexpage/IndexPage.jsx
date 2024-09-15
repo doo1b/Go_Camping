@@ -14,10 +14,18 @@ const IndexPage = () => {
       </div>
       <div>
         <div className="flex justify-center gap-x-20">
-          <button type="button" onClick={() => nav("/main")}>
+          <button
+            type="button"
+            onClick={() => nav("/main")}
+            className="transition transform hover:bg-opacity-110 active:scale-90"
+          >
             <img src={place} alt="메인 페이지 이동 이미지" />
           </button>
-          <button type="button" onClick={() => nav("/guide")}>
+          <button
+            type="button"
+            onClick={() => nav("/guide")}
+            className="transition transform hover:bg-opacity-110 active:scale-90"
+          >
             <img src={guide} alt="영상 가이드 페이지 이미지" />
           </button>
         </div>

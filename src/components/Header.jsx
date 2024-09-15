@@ -1,7 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import logo from "../../src/img/header_logo.png";
+import { useState } from "react";
 const Header = () => {
+  const [search, setsearch] = useState("");
+  const onChange = (e) => {
+    setsearch(e.target.value);
+    // 검색기능 구현 예정
+    // 헤더 페이지 09/15 (09시.20분) - 작업중
+  };
   return (
     <header className="bg-campblue p-4 flex items-center justify-between">
       <div className="flex-shrink-0">
@@ -16,7 +23,12 @@ const Header = () => {
           가이드 영상으로 가기
         </Link>
       </div>
-      <input className="border border-gray-300 p-2 rounded" />
+      <input
+        type="text"
+        value={search}
+        onChange={onChange}
+        className="border border-gray-300 p-2 rounded"
+      />
     </header>
   );
 };
