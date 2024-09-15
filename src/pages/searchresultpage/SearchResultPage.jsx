@@ -45,7 +45,8 @@ const SearchResultPage = () => {
   const [filteredCamps, setFilteredCamps] = useState([]);
 
   // 검색어를 바탕으로 캠핑장을 필터링하는 함수
-  const handleSearch = () => {
+  const handleSearch = (e) => {
+    e.preventDefault();
     const results = campingData.filter((camp) =>
       camp.name.toLowerCase().includes(keyword.toLowerCase())
     );
@@ -54,32 +55,28 @@ const SearchResultPage = () => {
   };
 
   // 검색 입력창에서 Enter키를 눌렀을 때, 검색을 실행하는 함수
-  const handleKeyPress = (e) => {
-    if (e.key === "Enter") {
-      // Enter를 눌렀을 때 검색 함수 호출
-      handleSearch();
-    }
-  };
+  // const handleKeyPress = (e) => {
+  //   if (e.key === "Enter") {
+  //     // Enter를 눌렀을 때 검색 함수 호출
+  //     handleSearch();
+  //   }
+  // };
 
   return (
     <div className="container box-border gap-5 m-10 mx-auto gap-y-4">
-      <div className="relative w-full max-w-md">
+      <form className="relative w-full max-w-md" onSubmit={handleSearch}>
         <input
           type="text"
           value={keyword}
           // 입력할 때마다 상태 업데이트
           onChange={(e) => setKeyword(e.target.value)}
-          onKeyPress={handleKeyPress}
           placeholder="캠핑장을 검색해 보세요."
           className="w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
         />
-        <button
-          onClick={handleSearch}
-          className="absolute text-gray-500 transform -translate-y-1/2 right-2 top-1/2"
-        >
+        <button className="absolute text-gray-500 transform -translate-y-1/2 right-2 top-1/2">
           🔍
         </button>
-      </div>
+      </form>
       {filteredCamps.length > 0 && (
         <ul className="w-full max-w-4xl mt-6 space-y-4">
           {filteredCamps.map((camp) => (
