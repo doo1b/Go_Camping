@@ -5,6 +5,7 @@ import MainPage from "../pages/mainpage/MainPage";
 import SearchResultPage from "../pages/searchresultpage/SearchResultPage";
 import DetailPage from "../pages/detailpage/DetailPage";
 import GuidePage from "../pages/guidepage/GuidePage";
+import DebugData from "../pages/debugpage/debugData";
 
 const Router = () => {
   return (
@@ -15,6 +16,7 @@ const Router = () => {
         <Route path="/searchresult" element={<SearchResultPage />} />
         <Route path="/detail/:contentId" element={<DetailPage />} />
         <Route path="/guide" element={<GuidePage />} />
+        <Route path="/data" element={<DebugData />} />
       </Routes>
     </BrowserRouter>
   );

@@ -45,18 +45,6 @@ const DetailPage = () => {
   const contentId = useParams('contentId');
   const [campsite, setCampsite] = useState(null);
 
-  // useEffect(() => {
-  //   const loadCampsites = async () => {
-  //     try {
-  //       await postCampSites();
-  //     } catch (error) {
-  //       console.log(error);
-  //     }
-  //   }
-
-  //   loadCampsites();
-  // }, []);
-
   useEffect(() => {
     const getCampsite = async (contentId) => {
       try {
