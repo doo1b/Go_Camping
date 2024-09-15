@@ -1,7 +1,7 @@
 import GuideCategory from "../../components/guidepage/GuideCategory";
 import Modal from "../../components/guidepage/Modal";
 import ModalOverlay from "../../components/guidepage/ModalOverlay";
-import useGuideStore from "../../zustand/guide";
+import useGuideStore from "../../store/guideStore";
 
 const GuidePage = () => {
   const { isOpen } = useGuideStore();

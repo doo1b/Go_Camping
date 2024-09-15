@@ -1,5 +1,5 @@
 import axios from "axios";
-import useGuideStore from "../../zustand/guide";
+import useGuideStore from "../../store/guideStore";
 import { useQuery } from "@tanstack/react-query";
 const YOUTUBE_API_KEY = import.meta.env.VITE_YOUTUBE_API_KEY;
 

@@ -1,4 +1,4 @@
-import useGuideStore from "../../zustand/guide";
+import useGuideStore from "../../store/guideStore";
 
 const ModalOverlay = ({ children }) => {
   const { modalClose, setSearchKeyword } = useGuideStore();
