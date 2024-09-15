@@ -65,3 +65,9 @@
   font-weight: 900;
   font-style: normal;
 }
+
+@layer components {
+  .guideBox {
+    @apply whitespace-pre-line flex items-center justify-center w-full h-44 p-8 text-center rounded-3xl bg-gray-400 text-white cursor-pointer;
+  }
+}
