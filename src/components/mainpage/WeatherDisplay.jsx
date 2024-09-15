@@ -12,7 +12,7 @@ const WeatherDisplay = () => {
   }, []);
 
   if (isPending) return <h2>데이터가 없습니다.</h2>;
-
+  
   return (
     <>
       <div
@@ -48,7 +48,7 @@ const WeatherDisplay = () => {
                     {weather.temp_max ?? "-"}º
                   </div>
                   <div className="font-preten400 text-sm pl-[4px] text-[#D8D8D8]">
-                    {weather.temp_max ?? "-"}
+                    {weather.temp_min ?? "-"}
                   </div>
                 </div>
               </div>

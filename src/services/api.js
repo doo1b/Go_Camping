@@ -11,6 +11,17 @@ const getCoordRegioncode = async (lat, lng) => {
   }
 };
 
+const getTodayWeather = async (lat, lng) => {
+  try {
+    const response = await weatherApi(
+      `weather?lat=${lat}&lon=${lng}&lang=kr&units=metric&appid=${WEATHER_API_KEY}`
+    );
+    return response.data;
+  } catch (error) {
+    console.error(`${error} : 오늘 날씨 정보를 가져오지 못했습니다.`);
+  }
+};
+
 const getWeeklyWeather = async (lat, lng) => {
   try {
     const response = await weatherApi(
@@ -18,12 +29,13 @@ const getWeeklyWeather = async (lat, lng) => {
     );
     return response.data;
   } catch (error) {
-    console.error(`${error} : 날씨 정보를 가져오지 못했습니다.`);
+    console.error(`${error} : 이번주 날씨 정보를 가져오지 못했습니다.`);
   }
 };
 
 const api = {
   getCoordRegioncode,
+  getTodayWeather,
   getWeeklyWeather
 };
 

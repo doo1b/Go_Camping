@@ -9,16 +9,25 @@ const useGetCoordRegionCodeQuery = ({ lat, lng }) => {
   });
 };
 
-// 날씨 데이터 가져오기
+// 오늘 날씨 데이터 가져오기
+const useGetTodayWeatherQuery = ({ lat, lng }) => {
+  return useQuery({
+    queryKey: ["todayWeather"],
+    queryFn: () => api.getTodayWeather(lat, lng)
+  });
+};
+
+// 이번주 날씨 데이터 가져오기
 const useGetWeeklyWeatherQuery = ({ lat, lng }) => {
   return useQuery({
-    queryKey: ["weather"],
+    queryKey: ["weeklyWeather"],
     queryFn: () => api.getWeeklyWeather(lat, lng)
   });
 };
 
 const useQuerys = {
   useGetCoordRegionCodeQuery,
+  useGetTodayWeatherQuery,
   useGetWeeklyWeatherQuery
 };
 
