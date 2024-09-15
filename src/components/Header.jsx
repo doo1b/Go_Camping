@@ -19,7 +19,7 @@ const Header = () => {
       <div className="flex-grow text-center">날씨 데이터</div>
       <div className="flex-shrink-0 flex items-center space-x-4">
         <Link
-          to="guide"
+          to="/guide"
           target="_blank"
           rel="noopener noreferrer"
           className="text-blue-500 hover:underline"
