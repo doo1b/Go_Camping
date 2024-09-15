@@ -5,7 +5,8 @@ export default {
     extend: {
       colors: {
         campblue: "#1D3B41",
-        campbrown: "#6B3D1A"
+        campbrown: "#6B3D1A",
+        background40: "rgba(0, 0, 0, 0.40)"
       },
       fontFamily: {
         preten100: "Pretendard-Thin",
@@ -17,6 +18,9 @@ export default {
         preten700: "Pretendard-Bold",
         preten800: "Pretendard-ExtraBold",
         preten900: "Pretendard-Black"
+      },
+      boxShadow: {
+        mainBoxShadow: "0 2px 8px rgba(0, 0, 0, 0.25)"
       }
     }
   },
