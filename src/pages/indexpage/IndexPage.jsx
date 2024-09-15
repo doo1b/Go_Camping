@@ -1,8 +1,8 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import logo from "../../img/Group 356.png";
-import place from "../../img/Group 368.png";
-import guide from "../../img/Group 369.png";
+import logo from "../../img/white logo.png";
+import place from "../../img/white place.png";
+import guide from "../../img/white guide.png";
 
 const IndexPage = () => {
   const nav = useNavigate();

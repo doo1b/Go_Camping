@@ -1,5 +1,7 @@
+import Layout from "../../components/Layout";
+
 const GuidePage = () => {
-  return <div>GuidePage</div>;
+  return <Layout />;
 };
 
 export default GuidePage;
