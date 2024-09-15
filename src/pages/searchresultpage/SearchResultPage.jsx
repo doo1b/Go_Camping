@@ -82,7 +82,7 @@ const SearchResultPage = () => {
       </div>
       {filteredCamps.length > 0 && (
         <ul className="w-full max-w-4xl mt-6 space-y-4">
-          {filteredCamps.map((camp) => {
+          {filteredCamps.map((camp) => (
             <li
               key={camp.id}
               className="p-4 bg-white border border-gray-300 rounded-lg shadow-md"
@@ -91,8 +91,8 @@ const SearchResultPage = () => {
               <h3>{camp.description}</h3>
               <h3>{camp.address}</h3>
               <h3>{camp.phone}</h3>
-            </li>;
-          })}
+            </li>
+          ))}
         </ul>
       )}
     </div>
