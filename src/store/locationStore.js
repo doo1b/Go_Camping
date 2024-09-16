@@ -14,13 +14,17 @@ const initialState = {
     isPanto: true,
     errMsg: null,
     isLoading: true
-  }
+  },
+  campsite: {},
+  campsites: [],
 };
 
 export const useLocationStore = create(
   immer((set) => ({
     ...initialState,
     setLocation: (updateLocation) =>
-      set((state) => ({ location: { ...state.location, ...updateLocation } }))
+      set((state) => ({ location: { ...state.location, ...updateLocation } })),
+    setCampsites: (campsites) => set(() => ({campsites: [ ...campsites ]})),
+    setCampsite: (campsite) => set(() => ({campsite: { ...campsite }})),
   }))
 );
