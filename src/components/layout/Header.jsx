@@ -74,19 +74,19 @@ const Header = () => {
         >
           가이드 영상으로 가기
         </Link>
+        <form
+          onSubmit={submitSearchForm}
+          className="w-[255px] h-[45px] flex justify-between items-center px-4 z-10 rounded-full shadow-mainBoxShadow bg-white"
+        >
+          <input
+            type="text"
+            value={searchForm}
+            onChange={(e) => setSearchForm(e.target.value)}
+            placeholder="캠핑장을 검색해 보세요!"
+            className="outline-none pl-1"
+          />
+        </form>
       </div>
-      <form
-        onSubmit={submitSearchForm}
-        className="w-[255px] h-[45px] flex justify-between items-center px-4 z-10 rounded-full shadow-mainBoxShadow bg-white fixed top-[22px] right-6"
-      >
-        <input
-          type="text"
-          value={searchForm}
-          onChange={(e) => setSearchForm(e.target.value)}
-          placeholder="캠핑장을 검색해 보세요!"
-          className="outline-none pl-1"
-        />
-      </form>
     </header>
   );
 };
