@@ -9,12 +9,13 @@ export const getTotalCount = async () => {
 
 export const getCampsites = async () => {
   const response = await axios.get(`${DB_JSON_URL}`);
-  return response.data;
+  return response.data[0].campsiteList;
 }
 
 export const getOneCampsite = async (contentId) => {
-  const response = await axios.get(`${DB_JSON_URL}?contentId=${contentId.contentId}`);
-  return response.data;
+  console.log(contentId);
+  const data = await getCampsites();
+  return data.filter((campsite) => campsite.contentId === contentId.contentId);
 }
 
 export const deleteOneCampsite = async (id) => {

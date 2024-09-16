@@ -44,6 +44,8 @@ const FacilityInfo = ({ sbrsCl, sbrsEtc }) => {
 }
 
 const CampsiteMap = ({ lat, lng }) => {
+  console.log(lat, lng);
+
   return (
     <Map // 지도를 표시할 Container
       center={{
