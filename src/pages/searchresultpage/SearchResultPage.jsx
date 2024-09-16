@@ -5,6 +5,7 @@ const campingData = [
   {
     id: 1,
     name: "Seoul Campground",
+    nameKr: "서울 캠프 그라운드",
     description: "도심 속 자연을 느낄 수 있는 서울 캠핑장 입니다.",
     address: "서울특별시 중구 서울로 110",
     lat: 37.5665,
@@ -14,6 +15,7 @@ const campingData = [
   {
     id: 2,
     name: "Busan Mountain Camp",
+    nameKr: "부산 마운틴 캠프",
     description: "부산의 산속에 위치한 조용하고 아름다운 캠프장 입니다.",
     address: "부산광역시 해운대구 산길로 35",
     lat: 35.1796,
@@ -23,6 +25,7 @@ const campingData = [
   {
     id: 3,
     name: "Jeju Island Camping",
+    nameKr: "제주 아일랜드 캠핑",
     description: "제주도의 바다와 산을 동시에 즐길 수 있는 캠핑장 입니다.",
     address: "제주특별자치도 제주시 오름길 22",
     lat: 33.4996,
@@ -32,6 +35,7 @@ const campingData = [
   {
     id: 4,
     name: "Gangwon Valley Camp",
+    nameKr: "강원 밸리 캠프",
     description: "강원도의 맑은 계곡 옆에 위치한 캠핑장 입니다.",
     address: "강원도 강릉시 계곡로 18",
     lat: 37.8228,
