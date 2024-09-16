@@ -4,41 +4,19 @@ import { useLocationStore } from "../../store/locationStore";
 import ReSetttingMapBounds from "./ReSetttingMapBounds";
 import Marker from "./Marker";
 import CustomOverlay from "./CustomOverlay";
+import { useKakaoMap } from "../../hooks/useKakaoMap";
 
 const KakaoMap = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const { location, setLocation, campsite, setCampsite, campsites } =
-    useLocationStore();
-
-  console.log(campsite);
-
-  // 지도 Drag 이벤트
-  const changeCurrentLocation = useCallback(
-    (map) => {
-      const latlng = map.getCenter();
-
-      setLocation({
-        center: {
-          lat: latlng.getLat(),
-          lng: latlng.getLng()
-        }
-      });
-    },
-    [setLocation]
-  );
-
-  const markerClickHandler = useCallback(
-    (camp) => {
-      setIsOpen(true);
-      setLocation({
-        center: {
-          lat: camp.latlng.lat,
-          lng: camp.latlng.lng
-        }
-      });
-    },
-    [campsite]
-  );
+  const {
+    isOpen,
+    setIsOpen,
+    location,
+    campsite,
+    setCampsite,
+    campsites,
+    changeCurrentLocation,
+    markerClickHandler
+  } = useKakaoMap();
 
   return (
     <Map
