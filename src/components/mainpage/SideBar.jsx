@@ -3,6 +3,8 @@ import SwitchToggle from "../../assets/SwitchToggle";
 import Logo from "../../assets/Logo";
 import { useNavigate } from "react-router-dom";
 import RegionCard from "./RegionCard";
+import campsiteFormatter from "../../utils/campsiteFormatter.js";
+import { useLocationStore } from "../../store/locationStore.js";
 
 const regionObj = {
   seoul: "서울",
@@ -10,18 +12,23 @@ const regionObj = {
   incheon: "인천",
   gangwon: "강원도",
   daejeonSejong: "대전 · 세종",
-  chungcheong: "충청도",
+  chungcheong: "충청",
   daegu: "대전",
-  jeolla: "전라도",
+  jeolla: "전라",
   gwangju: "광주",
-  gyeongsang: "경상도",
+  gyeongsang: "경상",
   busan: "부산",
   jeju: "제주도"
 };
 
 const SideBar = () => {
   const [isToggle, setIsToggle] = useState(false);
+  const setCampsites = useLocationStore((state) => state.setCampsites)
   const navigate = useNavigate();
+
+  const searchCampHandler = (region) => {
+    setCampsites(campsiteFormatter.formattedCampsitesData(region));
+  };
 
   return (
     <aside
@@ -31,15 +38,22 @@ const SideBar = () => {
     >
       <div className="w-full h-full flex justify-between items-center flex-col">
         <Logo />
-        <div className="text-base mt-4 text-campblue">찾고 계신 캠핑지가 있나요?</div>
+        <div className="text-base mt-4 text-campblue">
+          찾고 계신 캠핑지가 있나요?
+        </div>
         <div className="w-full max-h-[600px] my-4 py-2 flex justify-center items-center flex-wrap overflow-y-auto gap-2">
           {Object.keys(regionObj).map((region) => (
-            <RegionCard key={region} region={region} name={regionObj[region]} />
+            <RegionCard
+              key={region}
+              onClick={() => searchCampHandler(regionObj[region])}
+              region={region}
+              name={regionObj[region]}
+            />
           ))}
         </div>
         <button
           onClick={() => navigate("/guide")}
-          className="w-[252px] h-[48px] rounded-lg bg-campblue text-white hover:bg-[#294d55]"
+          className="w-[252px] h-[48px] rounded-md bg-campblue text-white hover:bg-[#294d55]"
         >
           캠핑 가이드 영상
         </button>
