@@ -51,8 +51,10 @@ const SearchResultPage = () => {
   // 검색어를 바탕으로 캠핑장을 필터링하는 함수
   const handleSearch = (e) => {
     e.preventDefault();
-    const results = campingData.filter((camp) =>
-      camp.name.toLowerCase().includes(keyword.toLowerCase())
+    const results = campingData.filter(
+      (camp) =>
+        camp.name.toLowerCase().includes(keyword.toLowerCase()) ||
+        camp.nameKr.includes(keyword)
     );
     // 필터링된 결과를 setFilteredCamps에 저장
     setFilteredCamps(results);
@@ -91,6 +93,7 @@ const SearchResultPage = () => {
               key={camp.id}
               className="p-4 bg-white border border-gray-300 rounded-lg shadow-md"
             >
+              <h3>{camp.nameKr}</h3>
               <h3>{camp.name}</h3>
               <h3>{camp.description}</h3>
               <h3>{camp.address}</h3>
