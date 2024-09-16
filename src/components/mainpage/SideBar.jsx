@@ -31,7 +31,7 @@ const SideBar = () => {
     >
       <div className="w-full h-full flex justify-between items-center flex-col">
         <Logo />
-        <div className="text-base mt-4">찾고 계신 캠핑지가 있나요?</div>
+        <div className="text-base mt-4 text-campblue">찾고 계신 캠핑지가 있나요?</div>
         <div className="w-full max-h-[600px] my-4 py-2 flex justify-center items-center flex-wrap overflow-y-auto gap-2">
           {Object.keys(regionObj).map((region) => (
             <RegionCard key={region} region={region} name={regionObj[region]} />
@@ -39,7 +39,7 @@ const SideBar = () => {
         </div>
         <button
           onClick={() => navigate("/guide")}
-          className="w-[252px] h-[48px] rounded-lg bg-[#1D3B41] text-white hover:bg-[#294d55]"
+          className="w-[252px] h-[48px] rounded-lg bg-campblue text-white hover:bg-[#294d55]"
         >
           캠핑 가이드 영상
         </button>
