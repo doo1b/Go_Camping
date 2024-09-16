@@ -16,9 +16,6 @@ const Header = () => {
   const [searchForm, setSearchForm] = useState("");
   const submitSearchForm = (e) => {
     e.preventDefault();
-
-    // 검색 기능 , 날씨 데이터 끌어오기 인덱스 페이지 css 일부 수정 (가이드 이미지로 수정)
-    // 라우팅 설정 관련해서 의문점이 있음 튜터님한테 여쭤보고
   };
   return (
     <header className="bg-campblue p-4 flex items-center justify-between sticky top-0 z-50 h-[95px]">

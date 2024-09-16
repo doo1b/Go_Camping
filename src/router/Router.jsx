@@ -9,7 +9,6 @@ import DebugData from "../pages/debugpage/debugData";
 import Layout from "../components/layout/Layout";
 
 const Router = () => {
-  // 레이아웃 컴포넌트로 인해 중첩 라우트 설정할 예정?
   return (
     <BrowserRouter>
       <Routes>
