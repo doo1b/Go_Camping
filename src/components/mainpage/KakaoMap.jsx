@@ -7,24 +7,6 @@ import CustomOverlay from "./CustomOverlay";
 import { useKakaoMap } from "../../hooks/useKakaoMap";
 
 const KakaoMap = () => {
-<<<<<<< HEAD
-  const { location, setLocation } = useLocationStore();
-
-  // 지도 Drag 이벤트
-  const changeCurrentLocation = useCallback(
-    (map) => {
-      const latlng = map.getCenter();
-
-      setLocation({
-        center: {
-          lat: latlng.getLat(),
-          lng: latlng.getLng()
-        }
-      });
-    },
-    [setLocation]
-  );
-=======
   const {
     isOpen,
     setIsOpen,
@@ -35,7 +17,6 @@ const KakaoMap = () => {
     changeCurrentLocation,
     markerClickHandler
   } = useKakaoMap();
->>>>>>> d2b9324a3b3fded52bdd48bfb1211579c0ef9bbf
 
   return (
     <Map

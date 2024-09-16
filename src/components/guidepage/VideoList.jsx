@@ -36,12 +36,12 @@ const VideoList = () => {
 
   return (
     <>
-    <div className="h-full w-full overflow-scroll">
-      {videos?.map((video) => (
-        <div key={`${video.title}-${video.channelId}`}>
-          <img src={video.thumbnails.default.url} />
-        </div>
-      ))}
+      <div className="h-full w-full overflow-scroll">
+        {videos?.map((video) => (
+          <div key={`${video.title}-${video.channelId}`}>
+            <img src={video.thumbnails.default.url} />
+          </div>
+        ))}
       </div>
     </>
   );
