@@ -44,30 +44,30 @@ const FacilityInfo = ({ sbrsCl, sbrsEtc }) => {
 }
 
 const CampsiteMap = ({ lat, lng }) => {
-  console.log(lat, lng);
-
   return (
-    <Map // 지도를 표시할 Container
-      center={{
-        // 지도의 중심좌표
-        lat: lat,
-        lng: lng,
-      }}
-      style={{
-        // 지도의 크기
-        width: "100%",
-        height: "300px",
-      }}
-      level={4} // 지도의 확대 레벨
-    >
-      <MapMarker // 마커를 생성합니다
-        position={{
-          // 마커가 표시될 위치입니다
+    <> 
+      <Map // 지도를 표시할 Container
+        center={{
+          // 지도의 중심좌표
           lat: lat,
           lng: lng,
         }}
-      />
-    </Map>
+        style={{
+          // 지도의 크기
+          width: "100%",
+          height: "300px",
+        }}
+        level={4} // 지도의 확대 레벨
+      >
+        <MapMarker // 마커를 생성합니다
+          position={{
+            // 마커가 표시될 위치입니다
+            lat: lat,
+            lng: lng,
+          }}
+        />
+      </Map>
+    </>
   )
 }
 
@@ -115,7 +115,9 @@ const DetailPage = () => {
           <>{ campsite?.homepage && <Link to={campsite?.homepage}>홈페이지 바로가기</Link> }</>
         </section>
         <section className="min-w-[400px] min-h-[300px]">
-          <CampsiteMap lat={campsite?.mapY} lng={campsite?.mapX} />
+        {campsite?.mapY && campsite?.mapX && (
+          <CampsiteMap lat={campsite.mapY} lng={campsite.mapX} />
+        )}
           <p className="text-[17px] font-preten300 mb-2">캠핑장 주소: {campsite?.addr1}</p>
         </section>
       </div>
