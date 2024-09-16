@@ -7,18 +7,21 @@ import DetailPage from "../pages/detailpage/DetailPage";
 import GuidePage from "../pages/guidepage/GuidePage";
 import DebugData from "../pages/debugpage/debugData";
 import VideoListPage from "../pages/guidepage/VideoListPage";
+import Layout from "../components/layout/Layout";
 
 const Router = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<IndexPage />} />
+        <Route path="/" element={<Layout />}>
+          <Route path="/searchresult" element={<SearchResultPage />} />
+          <Route path="/detail/:contentId" element={<DetailPage />} />
+          <Route path="/guide" element={<GuidePage />} />
+          <Route path="/data" element={<DebugData />} />
+          <Route path="guide/videolist" element={<VideoListPage />} />
+        </Route>
         <Route path="/main" element={<MainPage />} />
-        <Route path="/searchresult" element={<SearchResultPage />} />
-        <Route path="/detail/:contentId" element={<DetailPage />} />
-        <Route path="/guide" element={<GuidePage />} />
-        <Route path="/data" element={<DebugData />} />
-        <Route path="guide/videolist" element={<VideoListPage/>}/>
+        <Route index element={<IndexPage />} />
       </Routes>
     </BrowserRouter>
   );
