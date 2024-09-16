@@ -7,6 +7,11 @@ export const getTotalCount = async () => {
   return response.data;
 }
 
+export const getArray = async () => {
+  const response = await axios.get(`${DB_JSON_URL}`);
+  return response.data;
+}
+
 export const getCampsites = async () => {
   const response = await axios.get(`${DB_JSON_URL}`);
   return response.data[0].campsiteList;
