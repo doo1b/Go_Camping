@@ -1,10 +1,17 @@
 import axios from "axios";
 
-const GO_CAMP_URL = "https://apis.data.go.kr/B551011/GoCamping/basedList?numOfRows=4000&pageNo=1&MobileOS=ETC&MobileApp=gocamping&serviceKey=ym%2BF8SN69q6JARv8vcXBG6fYN57a%2Ffy5Q%2Fv0U5frlLS0DFWPEQqMRZC3OFM%2B%2F5b%2BRccx4Xgo04IcanY%2B6b2PEw%3D%3D&_type=Json";
+const GOCAMPING_KEY = import.meta.env.VITE_GOCAMPING_KEY;
+const GO_CAMP_URL = "https://apis.data.go.kr/B551011/GoCamping/basedList";
 const DB_JSON_URL = "http://localhost:5000/campsiteList";
 
+const getTotalCount = async() => {
+  const response = await axios.get(`${GO_CAMP_URL}?numOfRows=1&pageNo=1&MobileOS=ETC&MobileApp=gocamping&serviceKey=${GOCAMPING_KEY}&_type=Json`);
+  return response.data.response.body.totalCount;
+}
+
 export const postCampSites = async () => {
-  const response = await axios.get(`${GO_CAMP_URL}`);
+  const length = await getTotalCount();
+  const response = await axios.get(`${GO_CAMP_URL}?numOfRows=${length}&pageNo=1&MobileOS=ETC&MobileApp=gocamping&serviceKey=${GOCAMPING_KEY}&_type=Json`);
   const campsiteList = response.data.response.body.items.item;
   console.log(Array.isArray(campsiteList));
   await axios.post(`${DB_JSON_URL}`, JSON.stringify({campsiteList}, null, 2), {
