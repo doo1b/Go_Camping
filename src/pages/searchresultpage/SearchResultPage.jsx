@@ -95,13 +95,20 @@ const SearchResultPage = () => {
           {filteredCamps.map((camp) => (
             <li
               key={camp.id}
-              className="p-4 bg-white border border-gray-300 rounded-lg shadow-md"
+              className="flex items-start p-4 bg-white border border-gray-300 rounded-lg shadow-md"
             >
-              <h3>{camp.nameKr}</h3>
-              <h3>{camp.name}</h3>
-              <h3>{camp.description}</h3>
-              <h3>{camp.address}</h3>
-              <h3>{camp.phone}</h3>
+              <img
+                src={camp.image}
+                alt={camp.name}
+                className="object-cover w-32 h-32 mr-4 rounded-lg"
+              />
+              <div className="flex flex-col gap-2">
+                <h3>{camp.nameKr}</h3>
+                <h3>{camp.name}</h3>
+                <h3>{camp.description}</h3>
+                <h3>{camp.address}</h3>
+                <h3>{camp.phone}</h3>
+              </div>
             </li>
           ))}
         </ul>
