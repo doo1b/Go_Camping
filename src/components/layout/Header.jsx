@@ -30,14 +30,14 @@ const Header = () => {
         onMouseEnter={handleMouseToggle}
         onMouseLeave={handleMouseToggle}
       >
-        <div className="flex justify-center items-center">
+        <div className="flex items-center justify-center">
           <WeatherLocation />
           <div className="pl-2">{`${regionCode.depth_1} ${regionCode.depth_2}`}</div>
         </div>
         {currentWeather && (
-          <div className="flex justify-center items-center">
+          <div className="flex items-center justify-center">
             <WeatherIcon url={currentWeather.weather_icon} />
-            <div className="font-preten700 text-lg pl-2">
+            <div className="pl-2 text-lg font-preten700">
               {currentWeather.temp_max ?? "-"}º
             </div>
           </div>
@@ -51,9 +51,9 @@ const Header = () => {
                 key={index}
                 className="w-[180px] h-full flex justify-between items-center flex-row text-white"
               >
-                <div className="text-sm flex-1">{weather.dt}</div>
+                <div className="flex-1 text-sm">{weather.dt}</div>
                 <WeatherIcon url={weather.weather_icon} className="flex-1" />
-                <div className="flex flex-row justify-center items-end flex-1">
+                <div className="flex flex-row items-end justify-center flex-1">
                   <div className="font-preten700 text-lg mb-[-4px]">
                     {weather.temp_max ?? "-"}º
                   </div>
@@ -65,7 +65,7 @@ const Header = () => {
             ))}
         </div>
       )}
-      <div className="flex-shrink-0 flex items-center space-x-4">
+      <div className="flex items-center flex-shrink-0 space-x-4">
         <Link
           to="/guide"
           target="_blank"
@@ -83,7 +83,7 @@ const Header = () => {
             value={searchForm}
             onChange={(e) => setSearchForm(e.target.value)}
             placeholder="캠핑장을 검색해 보세요!"
-            className="outline-none pl-1"
+            className="pl-1 outline-none"
           />
         </form>
       </div>
