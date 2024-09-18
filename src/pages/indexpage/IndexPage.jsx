@@ -8,12 +8,12 @@ const IndexPage = () => {
   const nav = useNavigate();
 
   return (
-    <div className="bg-campblue">
+    <div className="bg-campblue min-h-screen flex flex-col justify-center">
       <div className="py-20">
         <img className="m-auto" src={logo} alt="로고 이미지" />
       </div>
       <div>
-        <div className="flex justify-center gap-x-20">
+        <div className="flex justify-center gap-x-60">
           <button
             type="button"
             onClick={() => nav("/main")}
