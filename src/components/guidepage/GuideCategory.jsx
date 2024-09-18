@@ -1,4 +1,4 @@
-import {  useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const GuideCategory = () => {
   const navigate = useNavigate();
@@ -37,7 +37,7 @@ const GuideCategory = () => {
             key={Object.keys(text)}
             className="guideBox"
             onClick={() => {
-             navigate(`videolist?category=${Object.keys(text)}`)
+              navigate(`videolist?category=${Object.keys(text)}`);
             }}
           >
             {Object.values(text)}

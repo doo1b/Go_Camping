@@ -1713,24 +1713,6 @@ globalthis@^1.0.3:
     define-properties "^1.2.1"
     gopd "^1.0.1"
 
-"go-camping@file:.":
-  version "0.0.0"
-  dependencies:
-    "@tanstack/react-query" "^5.55.4"
-    "@tanstack/react-query-devtools" "^5.55.4"
-    autoprefixer "^10.4.20"
-    axios "^1.7.7"
-    go-camping "file:../../../Library/Caches/Yarn/v6/npm-go-camping-0.0.0-4a716404-fd17-4357-80a3-57f6d66fdb85-1726405037703/node_modules/go-camping"
-    immer "^10.1.1"
-    json-server "^1.0.0-beta.2"
-    postcss "^8.4.45"
-    react "^18.3.1"
-    react-dom "^18.3.1"
-    react-kakao-maps-sdk "^1.1.27"
-    react-router-dom "^6.26.2"
-    tailwindcss "^3.4.11"
-    zustand "^4.5.5"
-
 gopd@^1.0.1:
   version "1.0.1"
   resolved "https://registry.npmjs.org/gopd/-/gopd-1.0.1.tgz"
@@ -2540,7 +2522,7 @@ react-is@^16.13.1:
 
 react-kakao-maps-sdk@^1.1.27:
   version "1.1.27"
-  resolved "https://registry.yarnpkg.com/react-kakao-maps-sdk/-/react-kakao-maps-sdk-1.1.27.tgz#577c5b53b76459a85fd3cc486ae0e799ec073b85"
+  resolved "https://registry.npmjs.org/react-kakao-maps-sdk/-/react-kakao-maps-sdk-1.1.27.tgz"
   integrity sha512-1EwYkYsjTDRFqysKStDasFMrFTXcLx2AyRlqMoWD7ONWhRqpjx9M874hkhEEHrnypP2eSIhhDLe0EiSKp3bd2Q==
   dependencies:
     "@babel/runtime" "^7.22.15"
@@ -3089,11 +3071,6 @@ uri-js@^4.2.2:
   dependencies:
     punycode "^2.1.0"
 
-use-sync-external-store@1.2.2:
-  version "1.2.2"
-  resolved "https://registry.npmjs.org/use-sync-external-store/-/use-sync-external-store-1.2.2.tgz"
-  integrity sha512-PElTlVMwpblvbNqQ82d2n6RjStvdSoNe9FG28kNfz3WiXilJm4DdNkEzRhCZuIDwY8U08WVihhGR5iRqAwfDiw==
-
 util-deprecate@^1.0.2:
   version "1.0.2"
   resolved "https://registry.npmjs.org/util-deprecate/-/util-deprecate-1.0.2.tgz"
@@ -3214,9 +3191,7 @@ youtube-player@5.5.2:
     load-script "^1.0.0"
     sister "^3.0.0"
 
-zustand@^4.5.5:
-  version "4.5.5"
-  resolved "https://registry.npmjs.org/zustand/-/zustand-4.5.5.tgz"
-  integrity sha512-+0PALYNJNgK6hldkgDq2vLrw5f6g/jCInz52n9RTpropGgeAf/ioFUCdtsjCqu4gNhW9D01rUQBROoRjdzyn2Q==
-  dependencies:
-    use-sync-external-store "1.2.2"
+zustand@^5.0.0-rc.2:
+  version "5.0.0-rc.2"
+  resolved "https://registry.yarnpkg.com/zustand/-/zustand-5.0.0-rc.2.tgz#d28d95ffb6f0b20cadbaea39210f18446a5bf989"
+  integrity sha512-o2Nwuvnk8vQBX7CcHL8WfFkZNJdxB/VKeWw0tNglw8p4cypsZ3tRT7rTRTDNeUPFS0qaMBRSKe+fVwL5xpcE3A==

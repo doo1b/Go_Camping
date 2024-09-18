@@ -1,24 +1,26 @@
 import useGuideStore from "../../store/guideStore";
 
-const VideoCard = ({video}) => {
-    function decodeHtmlEntities(text) {
-        const parser = new DOMParser();
-        const doc = parser.parseFromString(text, 'text/html');
-        return doc.documentElement.textContent;
-      }
-    const {modalOpen, setSelectedVideo } = useGuideStore();
+const VideoCard = ({ video }) => {
+  function decodeHtmlEntities(text) {
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(text, "text/html");
+    return doc.documentElement.textContent;
+  }
+  const { modalOpen, setSelectedVideo } = useGuideStore();
   return (
     <>
       <div
         key={`${video.title}-${video.channelId}`}
-        onClick={() => {modalOpen(),
-            setSelectedVideo(video.videoId)
+        onClick={() => {
+          modalOpen(), setSelectedVideo(video.videoId);
         }}
         className="flex items-center h-[180px]"
       >
-        <img src={video.thumbnails.medium.url} className="rounded-lg mr-3" />
+        <img src={video.thumbnails.medium.url} className="mr-3 rounded-lg" />
         <div className="flex flex-col justify-around h-full">
-          <p className="text-wrap font-preten600 text-xl">{decodeHtmlEntities(video.title)}</p>
+          <p className="text-xl text-wrap font-preten600">
+            {decodeHtmlEntities(video.title)}
+          </p>
           <p>{video.channelTitle}</p>
         </div>
       </div>
@@ -26,4 +28,4 @@ const VideoCard = ({video}) => {
   );
 };
 
-export default VideoCard
+export default VideoCard;

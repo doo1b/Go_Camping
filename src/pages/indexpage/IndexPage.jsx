@@ -8,9 +8,9 @@ const IndexPage = () => {
   const nav = useNavigate();
 
   return (
-    <body className="bg-campblue">
+    <div className="bg-campblue">
       <div className="py-20">
-        <img className="m-auto" img src={logo} alt="로고 이미지" />
+        <img className="m-auto" src={logo} alt="로고 이미지" />
       </div>
       <div>
         <div className="flex justify-center gap-x-20">
@@ -30,7 +30,7 @@ const IndexPage = () => {
           </button>
         </div>
       </div>
-    </body>
+    </div>
   );
 };
 
