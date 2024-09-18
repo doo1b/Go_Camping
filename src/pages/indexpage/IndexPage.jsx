@@ -1,16 +1,16 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import logo from "../../img/white logo.png";
-import place from "../../img/white place.png";
-import guide from "../../img/white guide.png";
+import logo from "../../../src/assets/indexpages/index_logo.png";
+import place from "../../../src/assets/indexpages/index_place.png";
+import guide from "../../../src/assets/indexpages/index_guide.png";
 
 const IndexPage = () => {
   const nav = useNavigate();
 
   return (
-    <body className="bg-campblue">
+    <div className="bg-campblue">
       <div className="py-20">
-        <img className="m-auto" img src={logo} alt="로고 이미지" />
+        <img className="m-auto" src={logo} alt="로고 이미지" />
       </div>
       <div>
         <div className="flex justify-center gap-x-20">
@@ -30,7 +30,7 @@ const IndexPage = () => {
           </button>
         </div>
       </div>
-    </body>
+    </div>
   );
 };
 

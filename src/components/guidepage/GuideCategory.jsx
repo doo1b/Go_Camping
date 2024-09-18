@@ -1,7 +1,7 @@
-import useGuideStore from "../../store/guideStore";
+import { useNavigate } from "react-router-dom";
 
 const GuideCategory = () => {
-  const { modalOpen, setSearchKeyword } = useGuideStore();
+  const navigate = useNavigate();
   const GUIDETEXT = [
     {
       "캠핑 입문 가이드": `캠핑 입문자를 위한
@@ -37,7 +37,7 @@ const GuideCategory = () => {
             key={Object.keys(text)}
             className="guideBox"
             onClick={() => {
-              modalOpen(), setSearchKeyword(Object.keys(text)[0]);
+              navigate(`videolist?category=${Object.keys(text)}`);
             }}
           >
             {Object.values(text)}

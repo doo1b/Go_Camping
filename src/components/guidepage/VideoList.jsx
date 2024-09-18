@@ -1,14 +1,20 @@
+import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import useGuideStore from "../../store/guideStore";
-import { useQuery } from "@tanstack/react-query";
+import ModalOverlay from "./ModalOverlay";
+import Modal from "./Modal";
+import { useSearchParams } from "react-router-dom";
+import VideoCard from "./VideoCard";
 const YOUTUBE_API_KEY = import.meta.env.VITE_YOUTUBE_API_KEY;
 
 const VideoList = () => {
-  const { searchKeyword } = useGuideStore();
+  const [searchCategory] = useSearchParams();
+  const searchKeyword = searchCategory.get("category");
+  const { isOpen } = useGuideStore();
   const params = {
     part: "snippet",
     q: searchKeyword,
-    maxResults: 10,
+    maxResults: 12,
     type: "video",
     key: YOUTUBE_API_KEY
   };
@@ -24,11 +30,16 @@ const VideoList = () => {
     queryKey: ["youtube", searchKeyword],
     queryFn: getYoutubeData,
     staleTime: 1000 * 60 * 60 * 12, // 할당량 최적화를 위해 12시간 동안 유지
-    enabled: !!searchKeyword
+    cacheTime: 1000 * 60 * 60 * 12,
+    enabled: !!searchKeyword && searchKeyword.trim() !== "", // 검색어가 있을 때만 쿼리 실행
+    refetchOnWindowFocus: false, // 포커스 변경 시 재요청 방지
+    refetchOnReconnect: false // 네트워크 재연결 시 재요청 방지
   });
 
-  const videos = data?.map((dataObj) => dataObj.snippet);
-  console.log(videos);
+  const videos = data?.map((video) => ({
+    videoId: video.id.videoId,
+    ...video.snippet
+  }));
 
   if (isLoading || isPending) return <div>로딩중...</div>;
 
@@ -36,12 +47,20 @@ const VideoList = () => {
 
   return (
     <>
-      <div className="h-full w-full overflow-scroll">
-        {videos?.map((video) => (
-          <div key={`${video.title}-${video.channelId}`}>
-            <img src={video.thumbnails.default.url} />
-          </div>
-        ))}
+      <div className="px-16 py-10 font-preten400">
+        <span className="pb-2 text-3xl border-b-2 border-campblue/50 text-campblue font-preten600">
+          {searchKeyword}
+        </span>
+        <div className="flex flex-col mt-10 gap-y-6">
+          {videos?.map((video) => (
+            <VideoCard video={video} key={video.videoId} />
+          ))}
+        </div>
+        {isOpen && (
+          <ModalOverlay>
+            <Modal />
+          </ModalOverlay>
+        )}
       </div>
     </>
   );

@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import { postCampSites } from '../../api/GetCampSite';
-import { deleteOneCampsite, getCampsites, getTotalCount } from '../../api/campSite';
+import { deleteOneCampsite, getArray, getTotalCount } from '../../api/campSite';
 
 const DebugData = () => {
   useEffect(() => {
@@ -17,7 +17,7 @@ const DebugData = () => {
           await postCampSites();
           console.log("삽입 완료");
         } else {
-          const data = await getCampsites();
+          const data = await getArray();
           const list = data.map((campsite) => campsite.id);
           list.forEach((id) => {
             deleteCampsite(id);
@@ -40,8 +40,7 @@ const DebugData = () => {
     <div>
       <pre>
 db.json에 한국관광공사_고캠핑 정보 조회서비스 데이터를 삽입하기 위한 테스트페이지 입니다.
-
-정식 배포시에는 이 페이지랑 Route를 삭제하고 배포하셔야 합니다.
+<br/>정식 배포시에는 이 페이지랑 Route를 삭제하고 배포하셔야 합니다.
       </pre>
     </div>
   )
