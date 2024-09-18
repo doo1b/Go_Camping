@@ -5,7 +5,10 @@ import { useState, useCallback } from "react";
 import WeatherLocation from "../../assets/WeatherLocation";
 import { useWeather } from "../../hooks/useWeather";
 import WeatherIcon from "../../assets/WeatherIcon";
+
 const Header = () => {
+  // 날씨
+  // 컴
   const [isHovered, setIsHovered] = useState(false);
   const { regionCode, isPending, currentWeather, weeklyWeather } = useWeather();
 
@@ -23,10 +26,9 @@ const Header = () => {
         <Link to="/main" target="_blank" rel="noopener noreferrer">
           <img src={logo} alt="로고 이미지 홈으로 이동" />
         </Link>
-        {/* 지도로 이동하는 설명 필요함 */}
       </div>
       <div
-        className="w-[255px] h-[45px] flex justify-between items-center px-4 z-10 rounded-full shadow-mainBoxShadow bg-white fixed top-[22px] left-[50%] transform translate-x-[-50%]"
+        className="w-[255px] h-[45px] flex justify-between items-center px-4 z-10 rounded-full shadow-mainBoxShadow bg-white absolute left-1/2 transform -translate-x-1/2"
         onMouseEnter={handleMouseToggle}
         onMouseLeave={handleMouseToggle}
       >
@@ -66,6 +68,14 @@ const Header = () => {
         </div>
       )}
       <div className="flex-shrink-0 flex items-center space-x-4">
+        <Link
+          to="/main"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-blue-500 hover:underline"
+        >
+          메인 페이지로 가기
+        </Link>
         <Link
           to="/guide"
           target="_blank"
