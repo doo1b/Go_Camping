@@ -84,7 +84,7 @@ const KakaoMap = () => {
       <MapMarker position={location.position}></MapMarker>
       <MarkerClusterer
         averageCenter={true} // 클러스터에 포함된 마크 평균 위치를 클러스터 마커 위치로 설정
-        minLevel={10} // 최소 지도 레벨
+        minLevel={7} // 최소 지도 레벨
         disableClickZoom={true} // 클러스터 마커 클릭 시 지도 확대 x
         onClusterclick={onClusterclick}
       >

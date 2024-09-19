@@ -1,19 +1,3 @@
-// import styled from "styled-components";
-
-// const Svg = styled.svg`
-//   width: 3rem;
-//   height: 3rem;
-//   z-index: 100;
-//   color: black;
-//   animation: spin 1s linear infinite;
-
-//   @keyframes spin {
-//     to {
-//       transform: rotate(360deg);
-//     }
-//   }
-// `;
-
 const Loading = () => (
   <svg
     version="1.1"
