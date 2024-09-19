@@ -6,7 +6,7 @@ const DetailMapSection = ({ campsite }) => {
       {campsite?.mapY && campsite?.mapX && (
         <CampsiteMap lat={campsite.mapY} lng={campsite.mapX} />
       )}
-      <p className="text-[17px] font-preten300 mt-2">캠핑장 주소: {campsite?.addr1}</p>
+      <p className="detailCategory mt-2 mb-[60px]">캠핑장 주소: {campsite?.addr1}</p>
     </section>
   )
 }

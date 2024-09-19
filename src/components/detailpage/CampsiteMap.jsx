@@ -15,6 +15,7 @@ const CampsiteMap = ({ lat, lng }) => {
           height: "400px",
         }}
         level={4} // 지도의 확대 레벨
+        className='rounded-2xl'
       >
         <MapMarker // 마커를 생성합니다
           position={{

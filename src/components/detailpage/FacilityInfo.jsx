@@ -9,7 +9,7 @@ const FacilityInfo = ({ sbrsCl, sbrsEtc }) => {
     <>
       {combined && (
         <>
-          <h4 className="detailCategory font-preten400">부대 시설</h4>
+          <h4 className="detailCategory font-preten500">부대 시설</h4>
           <p className="detailCategory">{combined}</p>
         </>
       )}
