@@ -7,7 +7,7 @@ const CustomOverlay = ({ campsite, setIsOpen }) => {
   const navigate = useNavigate();
 
   return (
-    <CustomOverlayMap position={campsite.latlng}>
+    <CustomOverlayMap position={campsite.latlng} yAnchor={1.18} zIndex={10}>
       <div className="w-[350px] h-[200px] flex justify-between items-baseline rounded-md flex-col pt-3 bg-white shadow-mainBoxShadow">
         <div className="flex px-4 justify-between items-center w-full mb-4 text-lg font-preten700">
           {campsite.facltNm}
