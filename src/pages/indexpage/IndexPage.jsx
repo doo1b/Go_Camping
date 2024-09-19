@@ -6,9 +6,11 @@ import guide from "../../../src/assets/indexpages/index_guide.png";
 
 const IndexPage = () => {
   const nav = useNavigate();
-
+  {
+    /* <div className="bg-campblue min-h-screen flex flex-col justify-center items-center"> */
+  }
   return (
-    <div className="bg-campblue min-h-screen flex flex-col justify-center items-center">
+    <div className="flex flex-col justify-center min-h-screen bg-campblue">
       <div className="py-10">
         <img className="m-auto" src={logo} alt="로고 이미지" />
       </div>

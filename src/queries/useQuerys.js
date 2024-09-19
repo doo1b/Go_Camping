@@ -1,5 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import api from "../services/api";
+import { getCampsites } from "../api/campSite";
 
 // 행정 구역 가져오기
 const useGetCoordRegionCodeQuery = ({ lat, lng }) => {
@@ -25,10 +26,21 @@ const useGetWeeklyWeatherQuery = ({ lat, lng }) => {
   });
 };
 
+// 캠핑장 데이터 가져오기
+const useGetCampsitesQuery = () => {
+  return useQuery({
+    queryKey: ["campsites"],
+    queryFn: () => getCampsites(),
+    staleTime: 1000 * 60 * 60 * 24,
+    cacheTime: 1000 * 60 * 60 * 24,
+  });
+};
+
 const useQuerys = {
   useGetCoordRegionCodeQuery,
   useGetTodayWeatherQuery,
-  useGetWeeklyWeatherQuery
+  useGetWeeklyWeatherQuery,
+  useGetCampsitesQuery
 };
 
 export default useQuerys;

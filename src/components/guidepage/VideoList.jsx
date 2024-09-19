@@ -47,11 +47,11 @@ const VideoList = () => {
 
   return (
     <>
-      <div className="px-16 py-10 font-preten400">
+      <div className="pb-10 pt-14 px-14 font-preten400">
         <span className="pb-2 text-3xl border-b-2 border-campblue/50 text-campblue font-preten600">
           {searchKeyword}
         </span>
-        <div className="flex flex-col mt-10 gap-y-6">
+        <div className="grid grid-cols-[repeat(auto-fill,minmax(480px,1fr))] gap-x-10 gap-y-14 mt-12">
           {videos?.map((video) => (
             <VideoCard video={video} key={video.videoId} />
           ))}

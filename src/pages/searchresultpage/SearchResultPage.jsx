@@ -1,4 +1,6 @@
 import { useState } from "react";
+import SearchBar from "../../components/searchresultpage/SearchBar";
+import SearchResults from "../../components/searchresultpage/SearchResults";
 
 // 임의의 캠핑장 데이터 생성
 const campingData = [
@@ -73,45 +75,14 @@ const SearchResultPage = () => {
   // };
 
   return (
-    <div className="container box-border gap-5 m-10 mx-auto gap-y-4">
-      <form className="relative w-full max-w-md" onSubmit={handleSearch}>
-        <input
-          type="text"
-          value={keyword}
-          // 입력할 때마다 상태 업데이트
-          onChange={(e) => setKeyword(e.target.value)}
-          placeholder="캠핑장을 검색해 보세요."
-          className="w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
-        />
-        <button
-          className="absolute text-gray-500 transform -translate-y-1/2 right-2 top-1/2"
-          type="submit"
-        >
-          🔍
-        </button>
-      </form>
+    <div className="flex flex-col items-center py-8">
+      <SearchBar
+        keyword={keyword}
+        setKeyword={setKeyword}
+        handleSearch={handleSearch}
+      />
       {filteredCamps.length > 0 && (
-        <ul className="w-full max-w-4xl mt-6 space-y-4">
-          {filteredCamps.map((camp) => (
-            <li
-              key={camp.id}
-              className="flex items-start p-4 bg-white border border-gray-300 rounded-lg shadow-md"
-            >
-              <img
-                src={camp.image}
-                alt={camp.name}
-                className="object-cover w-32 h-32 mr-4 rounded-lg"
-              />
-              <div className="flex flex-col gap-2">
-                <h3>{camp.nameKr}</h3>
-                <h3>{camp.name}</h3>
-                <h3>{camp.description}</h3>
-                <h3>{camp.address}</h3>
-                <h3>{camp.phone}</h3>
-              </div>
-            </li>
-          ))}
-        </ul>
+        <SearchResults filteredCamps={filteredCamps} />
       )}
     </div>
   );
