@@ -1,4 +1,4 @@
-import CampsiteMap from "./CampsiteMap"
+import CampsiteMap from "./CampsiteMap";
 
 const DetailMapSection = ({ campsite }) => {
   return (
@@ -6,9 +6,13 @@ const DetailMapSection = ({ campsite }) => {
       {campsite?.mapY && campsite?.mapX && (
         <CampsiteMap lat={campsite.mapY} lng={campsite.mapX} />
       )}
-      <p className="detailCategory mt-2 mb-[60px]">캠핑장 주소: {campsite?.addr1}</p>
+      {campsite?.addr1 && (
+        <p className="detailCategory mt-2 mb-[60px]">
+          캠핑장 주소: {campsite.addr1}
+        </p>
+      )}
     </section>
-  )
-}
+  );
+};
 
-export default DetailMapSection
+export default DetailMapSection;
