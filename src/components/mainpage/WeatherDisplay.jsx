@@ -12,17 +12,17 @@ const WeatherDisplay = () => {
   }, []);
 
   if (isPending) return <h2>데이터가 없습니다.</h2>;
-  
+
   return (
     <>
       <div
-        className="w-[255px] h-[45px] flex justify-between items-center px-4 z-10 rounded-full shadow-mainBoxShadow bg-white fixed top-[22px] left-[50%] transform translate-x-[-50%]"
+        className="w-[280px] h-[45px] flex justify-between items-center px-4 z-10 rounded-full shadow-mainBoxShadow bg-white fixed top-[22px] left-[50%] transform translate-x-[-50%]"
         onMouseEnter={handleMouseToggle}
         onMouseLeave={handleMouseToggle}
       >
         <div className="flex justify-center items-center">
           <WeatherLocation />
-          <div className="pl-2">{`${regionCode.depth_1} ${regionCode.depth_2}`}</div>
+          <div className="pl-2 ">{`${regionCode.depth_1} ${regionCode.depth_2}`}</div>
         </div>
         {currentWeather && (
           <div className="flex justify-center items-center">
