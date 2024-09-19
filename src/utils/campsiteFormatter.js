@@ -1,13 +1,16 @@
-import { campsiteList } from "../components/mainpage/mock";
+const formattedCampsitesData = (campsites, region) => {
+  const filteredCampsites = campsites.filter((campsite) => {
+    if (region === "대전 세종") {
+      const regions = region.split(" ");
 
-const formattedCampsitesData = (region) => {
-  const filteredCampsites = campsiteList.filter((campsite) =>
-    campsite.doNm.includes(region)
-  );
+      return regions.some((region) => campsite.doNm.includes(region));
+    }
+    return campsite.doNm.includes(region);
+  });
 
   const formattedCampsites = filteredCampsites.map((campsite) => ({
     contentId: campsite.contentId,
-    latlng: {lat: +campsite.mapY, lng: +campsite.mapX},
+    latlng: { lat: +campsite.mapY, lng: +campsite.mapX },
     doNm: campsite.doNm,
     facltNm: campsite.facltNm,
     addr: campsite.addr1,
