@@ -10,7 +10,7 @@ const Header = () => {
     e.preventDefault();
   };
 
-  // 웨더 디스플레이 칸 맞추는 css 코드 작성예정
+  // 웨더 디스플레이 top 맞추는 css 코드 작성예정
   return (
     <header className="bg-campblue p-4 flex items-center justify-between sticky top-0 z-50 h-[95px]">
       <div className="flex-shrink-0">

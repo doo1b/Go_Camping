@@ -28,34 +28,3 @@ const Router = () => {
 };
 
 export default Router;
-
-// import React from "react";
-// import { BrowserRouter, Route, Routes } from "react-router-dom";
-// import IndexPage from "../pages/indexpage/IndexPage";
-// import MainPage from "../pages/mainpage/MainPage";
-// import SearchResultPage from "../pages/searchresultpage/SearchResultPage";
-// import DetailPage from "../pages/detailpage/DetailPage";
-// import GuidePage from "../pages/guidepage/GuidePage";
-// import DebugData from "../pages/debugpage/debugData";
-// import Layout from "../components/layout/Layout";
-
-// const Router = () => {
-//   return (
-//     <BrowserRouter>
-//       <Layout>
-//         <Routes>
-//           <Route index element={<IndexPage />} />
-//           <Route path="/searchresult" element={<SearchResultPage />} />
-//           <Route path="/detail/:contentId" element={<DetailPage />} />
-//           <Route path="/guide" element={<GuidePage />} />
-//           <Route path="/data" element={<DebugData />} />
-//         </Routes>
-//       </Layout>
-//       <Routes>
-//         <Route path="/main" element={<MainPage />} />
-//       </Routes>
-//     </BrowserRouter>
-//   );
-// };
-
-// export default Router;
