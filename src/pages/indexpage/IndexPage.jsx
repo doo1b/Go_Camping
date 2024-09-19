@@ -8,7 +8,7 @@ const IndexPage = () => {
   const nav = useNavigate();
 
   return (
-    <div className="bg-campblue min-h-screen flex flex-col justify-center">
+    <div className="flex flex-col justify-center min-h-screen bg-campblue">
       <div className="py-10">
         <img className="m-auto" src={logo} alt="로고 이미지" />
       </div>

@@ -68,13 +68,33 @@
 
 @layer components {
   .guideBox {
-    @apply flex items-center justify-center w-full p-8 text-center text-white whitespace-pre-line bg-gray-400 cursor-pointer h-44 rounded-3xl;
+    @apply font-preten500 whitespace-pre-line flex items-center justify-center w-full h-44 p-8 text-center rounded-3xl bg-[#E4F1F3] text-campblue cursor-pointer hover:bg-campblue duration-100 hover:text-white;
+  }
+
+  .guideCategoryBox {
+    @apply flex md:items-center justify-center md:h-[calc(100vh-95px)] font-preten400;
+  }
+
+  .categoryBox {
+    @apply grid gap-10 md:grid-cols-3 xs:grid-cols-2 xs:gap-4;
+  }
+}
+
+@layer base {
+  .text-overflow {
+    @apply overflow-hidden;
+    @apply break-words;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
   }
   .detailSection {
-    @apply min-w-[600px] min-h-[300px]
+    @apply min-w-[600px] min-h-[300px];
   }
   .detailCategory {
-    @apply text-[20px] font-preten300 mb-2
+    @apply text-[20px] font-preten300 mb-2;
   }
 }
 
@@ -90,5 +110,5 @@
   border-radius: 10px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(0, 0, 0, 0.3)
+  background: rgba(0, 0, 0, 0.3);
 }

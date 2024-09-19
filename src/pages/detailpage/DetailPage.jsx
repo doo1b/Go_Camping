@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom"
+import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 import { useState } from "react";
 import { getOneCampsite, getTotalCount } from "../../api/campSite";
@@ -6,7 +6,7 @@ import DetailPageTitle from "../../components/detailpage/DetailPageTitle";
 import DetailPageBody from "../../components/detailpage/DetailPageBody";
 
 const DetailPage = () => {
-  const contentId = useParams('contentId');
+  const contentId = useParams("contentId");
   const [campsite, setCampsite] = useState(null);
 
   useEffect(() => {
@@ -19,9 +19,9 @@ const DetailPage = () => {
       } catch (error) {
         console.log(error);
       }
-    }
+    };
 
-    getCampsite(contentId); 
+    getCampsite(contentId);
   }, [contentId]);
 
   console.log(campsite);

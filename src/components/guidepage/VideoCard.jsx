@@ -14,14 +14,24 @@ const VideoCard = ({ video }) => {
         onClick={() => {
           modalOpen(), setSelectedVideo(video.videoId);
         }}
-        className="flex items-center h-[180px]"
+        className="flex flex-col w-[480px] cursor-pointer hover:scale-105 duration-100"
       >
-        <img src={video.thumbnails.medium.url} className="mr-3 rounded-lg" />
-        <div className="flex flex-col justify-around h-full">
-          <p className="text-xl text-wrap font-preten600">
+        <img
+          src={video.thumbnails.high.url}
+          className=" rounded-lg h-[260px] object-cover"
+        />
+        <div className="flex flex-col justify-start h-full pr-1">
+          <p className="my-3 text-xl text-justify text-wrap font-preten700 text-overflow">
             {decodeHtmlEntities(video.title)}
           </p>
-          <p>{video.channelTitle}</p>
+          <div className="flex items-end justify-between">
+            <span className="text-over font-preten500">
+              {video.channelTitle}
+            </span>
+            <span className="text-xs font-preten200">
+              {video.publishTime.slice(0, 10)}
+            </span>
+          </div>
         </div>
       </div>
     </>
