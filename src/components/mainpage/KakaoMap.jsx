@@ -48,10 +48,9 @@ const KakaoMap = () => {
 
     // 지도 우상단, 좌하단 좌표값 도출
     const mapBounds = mapRef.current.getBounds();
-
+    // 현재 줌 레벨 가져오기
     const zoomLevel = mapRef.current.getLevel();
-    console.log(zoomLevel);
-
+    // 줌 레벨에 따른 마커 동적 필터링
     let visibleCampsites = filterCampsitesByZoomLevel(zoomLevel);
 
     // 스크린의 꼭짓점 내에 해당하는 마커만 필터링
