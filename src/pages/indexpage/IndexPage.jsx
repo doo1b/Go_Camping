@@ -9,7 +9,7 @@ const IndexPage = () => {
 
   return (
     <div className="bg-campblue min-h-screen flex flex-col justify-center">
-      <div className="py-20">
+      <div className="py-10">
         <img className="m-auto" src={logo} alt="로고 이미지" />
       </div>
       <div>
