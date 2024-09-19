@@ -2,23 +2,30 @@ import logo from "../../../src/assets/header/header_logo.png";
 import place from "../../../src/assets/header/header_place.png";
 import guide from "../../../src/assets/header/header_guide.png";
 import WeatherDisplay from "../../components/mainpage/WeatherDisplay";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useState } from "react";
 const Header = () => {
   const [searchForm, setSearchForm] = useState("");
+  const location = useLocation();
+
   const submitSearchForm = (e) => {
     e.preventDefault();
   };
 
-  // 웨더 디스플레이 top 맞추는 css 코드 작성예정
+  const onWeatherDisplay = location.pathname.startsWith("/detail");
+
   return (
-    <header className="bg-campblue p-4 flex items-center justify-between sticky top-0 z-50 h-[95px]">
+    <header className="bg-campblue p-4 flex items-center justify-between sticky top-0 z-50 h-[90px]">
       <div className="flex-shrink-0">
         <Link to="/" target="_blank" rel="noopener noreferrer">
           <img src={logo} alt="로고 이미지 홈으로 이동" />
         </Link>
       </div>
-      <WeatherDisplay />
+      {onWeatherDisplay && (
+        <div className="text-sm">
+          <WeatherDisplay />
+        </div>
+      )}
       <div className="flex items-center flex-shrink-0 space-x-6">
         <Link
           to="/main"
