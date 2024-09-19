@@ -1,6 +1,5 @@
-import React, { useCallback, useState } from "react";
+import React from "react";
 import { Map, MapMarker } from "react-kakao-maps-sdk";
-import { useLocationStore } from "../../store/locationStore";
 import ReSetttingMapBounds from "./ReSetttingMapBounds";
 import Marker from "./Marker";
 import CustomOverlay from "./CustomOverlay";
