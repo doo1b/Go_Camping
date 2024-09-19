@@ -1,6 +1,6 @@
 const SearchBar = ({ keyword, setKeyword, handleSearch }) => {
   return (
-    <form>
+    <form onSubmit={handleSearch} className="relative w-full max-w-md">
       <input
         type="text"
         value={keyword}
