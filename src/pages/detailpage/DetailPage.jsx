@@ -1,4 +1,4 @@
-import { Link, useParams } from "react-router-dom"
+import { Link, useParams } from "react-router-dom";
 import { useEffect } from "react";
 import { useState } from "react";
 import { getOneCampsite, getTotalCount } from "../../api/campSite";
@@ -23,13 +23,17 @@ const AmenitiesInfo = ({ caravInnerFclty, glampInnerFclty }) => {
       )}
     </>
   );
-}
+};
 
 const FacilityInfo = ({ sbrsCl, sbrsEtc }) => {
-  const combined = sbrsCl && sbrsEtc ? `${sbrsCl}, ${sbrsEtc}` 
-                  : sbrsCl ? sbrsCl 
-                  : sbrsEtc ? sbrsEtc 
-                  : null;
+  const combined =
+    sbrsCl && sbrsEtc
+      ? `${sbrsCl}, ${sbrsEtc}`
+      : sbrsCl
+      ? sbrsCl
+      : sbrsEtc
+      ? sbrsEtc
+      : null;
 
   return (
     <>
@@ -41,21 +45,21 @@ const FacilityInfo = ({ sbrsCl, sbrsEtc }) => {
       )}
     </>
   );
-}
+};
 
 const CampsiteMap = ({ lat, lng }) => {
   return (
-    <> 
+    <>
       <Map // 지도를 표시할 Container
         center={{
           // 지도의 중심좌표
           lat: lat,
-          lng: lng,
+          lng: lng
         }}
         style={{
           // 지도의 크기
           width: "100%",
-          height: "300px",
+          height: "300px"
         }}
         level={4} // 지도의 확대 레벨
       >
@@ -63,16 +67,16 @@ const CampsiteMap = ({ lat, lng }) => {
           position={{
             // 마커가 표시될 위치입니다
             lat: lat,
-            lng: lng,
+            lng: lng
           }}
         />
       </Map>
     </>
-  )
-}
+  );
+};
 
 const DetailPage = () => {
-  const contentId = useParams('contentId');
+  const contentId = useParams("contentId");
   const [campsite, setCampsite] = useState(null);
 
   useEffect(() => {
@@ -85,9 +89,9 @@ const DetailPage = () => {
       } catch (error) {
         console.log(error);
       }
-    }
+    };
 
-    getCampsite(contentId); 
+    getCampsite(contentId);
   }, [contentId]);
 
   console.log(campsite);
@@ -100,25 +104,57 @@ const DetailPage = () => {
       </div>
       <div className="flex flex-wrap">
         <section className="min-w-[400px] min-h-[300px]">
-        <>{ campsite?.firstImageUrl !== "" ? <img src={campsite?.firstImageUrl} /> : <DetailPageLogo /> }</>
+          <>
+            {campsite?.firstImageUrl !== "" ? (
+              <img src={campsite?.firstImageUrl} />
+            ) : (
+              <DetailPageLogo />
+            )}
+          </>
         </section>
         <section className="min-w-[400px] min-h-[300px]">
-          <>{ campsite?.lineIntro && <h4 className="text-[17px] font-preten400 mb-2">{campsite.lineIntro}</h4> }</>
-          <AmenitiesInfo caravInnerFclty={campsite?.caravInnerFclty} glampInnerFclty={campsite?.glampInnerFclty} />
+          <>
+            {campsite?.lineIntro && (
+              <h4 className="text-[17px] font-preten400 mb-2">
+                {campsite.lineIntro}
+              </h4>
+            )}
+          </>
+          <AmenitiesInfo
+            caravInnerFclty={campsite?.caravInnerFclty}
+            glampInnerFclty={campsite?.glampInnerFclty}
+          />
           <FacilityInfo sbrsCl={campsite?.sbrsCl} sbrsEtc={campsite?.sbrsEtc} />
           <h4 className="text-[17px] font-preten400 mb-2">운영 기간</h4>
-          <p className="text-[17px] font-preten300 mb-2">{campsite?.operPdCl} / {campsite?.operDeCl}</p>
+          <p className="text-[17px] font-preten300 mb-2">
+            {campsite?.operPdCl} / {campsite?.operDeCl}
+          </p>
           <div className="flex items-center gap-3">
-            <h4 className="text-[17px] font-preten400 mb-2">애완동물 출입</h4><p className="text-[17px] font-preten300 mb-2">{campsite?.animalCmgCl}</p>
+            <h4 className="text-[17px] font-preten400 mb-2">애완동물 출입</h4>
+            <p className="text-[17px] font-preten300 mb-2">
+              {campsite?.animalCmgCl}
+            </p>
           </div>
-          <>{ campsite?.tel && <p className="text-[17px] font-preten300 mb-2">전화 문의: {campsite?.tel}</p> }</>
-          <>{ campsite?.homepage && <Link to={campsite?.homepage}>홈페이지 바로가기</Link> }</>
+          <>
+            {campsite?.tel && (
+              <p className="text-[17px] font-preten300 mb-2">
+                전화 문의: {campsite?.tel}
+              </p>
+            )}
+          </>
+          <>
+            {campsite?.homepage && (
+              <Link to={campsite?.homepage}>홈페이지 바로가기</Link>
+            )}
+          </>
         </section>
         <section className="min-w-[400px] min-h-[300px]">
-        {campsite?.mapY && campsite?.mapX && (
-          <CampsiteMap lat={campsite.mapY} lng={campsite.mapX} />
-        )}
-          <p className="text-[17px] font-preten300 mb-2">캠핑장 주소: {campsite?.addr1}</p>
+          {campsite?.mapY && campsite?.mapX && (
+            <CampsiteMap lat={campsite.mapY} lng={campsite.mapX} />
+          )}
+          <p className="text-[17px] font-preten300 mb-2">
+            캠핑장 주소: {campsite?.addr1}
+          </p>
         </section>
       </div>
     </>

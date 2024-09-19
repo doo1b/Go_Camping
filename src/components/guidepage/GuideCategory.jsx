@@ -30,8 +30,8 @@ const GuideCategory = () => {
   ];
 
   return (
-    <div className="flex items-center justify-center min-h-screen font-preten400">
-      <div className="grid grid-cols-3 gap-10">
+    <div className="guideCategoryBox">
+      <div className="categoryBox">
         {GUIDETEXT.map((text) => (
           <div
             key={Object.keys(text)}
