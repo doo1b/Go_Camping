@@ -1,4 +1,3 @@
-import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import IndexPage from "../pages/indexpage/IndexPage";
 import MainPage from "../pages/mainpage/MainPage";
