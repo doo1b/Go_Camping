@@ -3,6 +3,7 @@ import { MapMarker, useMap } from "react-kakao-maps-sdk";
 
 const Marker = ({ camp, setIsOpen, setCampsite, markerClickHandler }) => {
   const map = useMap();
+
   return (
     <MapMarker
       key={camp.contentId}

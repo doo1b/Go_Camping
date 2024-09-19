@@ -4,6 +4,7 @@ import Logo from "../../assets/Logo";
 import { useNavigate } from "react-router-dom";
 import RegionCard from "./RegionCard";
 import useCampsite from "../../hooks/useCampsite.js";
+import Loading from "../../assets/Loading.jsx";
 
 const regionObj = {
   seoul: "서울",
@@ -24,7 +25,14 @@ const SideBar = () => {
   const [isToggle, setIsToggle] = useState(false);
   const navigate = useNavigate();
   const { searchCampHandler } = useCampsite();
-
+  // console.log(isLoading);
+  // if (isLoading)
+  //   return (
+  //     <div className="fixed z-[100] top-2/4 left-2/4">
+  //       <Loading />
+  //     </div>
+  //   );
+  
   return (
     <aside
       className={`w-[300px] h-[calc(100vh-48px)] px-6 py-4 shadow-mainBoxShadow fixed z-10 flex top-6 left-6 rounded-2xl justify-center items-center bg-white transition-transform duration-300 ease-in-out ${
