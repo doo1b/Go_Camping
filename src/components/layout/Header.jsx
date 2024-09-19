@@ -4,6 +4,7 @@ import guide from "../../../src/assets/header/header_guide.png";
 import WeatherDisplay from "../../components/mainpage/WeatherDisplay";
 import { Link, useLocation } from "react-router-dom";
 import { useState } from "react";
+
 const Header = () => {
   const [searchForm, setSearchForm] = useState("");
   const location = useLocation();
@@ -11,15 +12,17 @@ const Header = () => {
   const submitSearchForm = (e) => {
     e.preventDefault();
   };
+  //  날씨 컴포넌트 헤더 수직 너비에 맞추기
+  // 준현님 검색결과 페이지에 검색바 연동
 
   const onWeatherDisplay = location.pathname.startsWith("/detail");
 
   return (
     <header className="bg-campblue p-4 flex items-center justify-between sticky top-0 z-50 h-[90px]">
       <div className="flex-shrink-0">
-        <Link to="/" target="_blank" rel="noopener noreferrer">
-          <img src={logo} alt="로고 이미지 홈으로 이동" />
-        </Link>
+        {/* <Link to="/" target="_blank" rel="noopener noreferrer"> */}
+        <img src={logo} alt="로고 이미지 홈으로 이동" />
+        {/* </Link> */}
       </div>
       {onWeatherDisplay && (
         <div className="text-sm">
@@ -45,7 +48,7 @@ const Header = () => {
         </Link>
         <form
           onSubmit={submitSearchForm}
-          className="w-[255px] h-[45px] flex justify-between items-center px-4 z-10 rounded-full shadow-mainBoxShadow bg-white"
+          className="w-[255px] h-[45px] flex justify-between items-center px-4 z-10 rounded-full shadow-mainBoxShadow bg-white transition-transform duration-300 transform hover:scale-105"
         >
           <input
             type="text"

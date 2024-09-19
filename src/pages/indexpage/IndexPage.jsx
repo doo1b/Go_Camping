@@ -8,7 +8,7 @@ const IndexPage = () => {
   const nav = useNavigate();
 
   return (
-    <div className="bg-campblue min-h-screen flex flex-col justify-center">
+    <div className="bg-campblue min-h-screen flex flex-col justify-center items-center">
       <div className="py-10">
         <img className="m-auto" src={logo} alt="로고 이미지" />
       </div>
@@ -17,14 +17,14 @@ const IndexPage = () => {
           <button
             type="button"
             onClick={() => nav("/main")}
-            className="transition transform hover:bg-opacity-110 active:scale-90"
+            className="transition transform hover:bg-opacity-110 active:scale-90 transition-transform duration-300 transform hover:scale-110"
           >
             <img key="true" src={place} alt="메인 페이지 이동 이미지" />
           </button>
           <button
             type="button"
             onClick={() => nav("/guide")}
-            className="transition transform hover:bg-opacity-110 active:scale-90"
+            className="transition transform hover:bg-opacity-110 active:scale-90 transition-transform duration-300 transform hover:scale-110"
           >
             <img key="true" src={guide} alt="영상 가이드 페이지 이미지" />
           </button>
