@@ -4,7 +4,7 @@ const SearchResults = ({ filteredCamps }) => {
       {filteredCamps.map((camp) => (
         <li
           key={camp.id}
-          className="flex p-4 bg-white border border-gray-300 rounded-lg shadow-md"
+          className="flex p-4 mb-6 bg-white border border-gray-300 rounded-lg shadow-md"
         >
           <img
             src={camp.image}
