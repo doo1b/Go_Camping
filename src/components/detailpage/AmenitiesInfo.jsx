@@ -3,15 +3,15 @@ const AmenitiesInfo = ({ caravInnerFclty, glampInnerFclty }) => {
     <>
       {caravInnerFclty && (
         <>
-          <h4 className="text-[17px] font-preten400 mb-2">카라반 편의 시설</h4>
-          <p className="text-[17px] font-preten300 mb-2">{caravInnerFclty}</p>
+          <h4 className="detailCategory font-preten400">카라반 편의 시설</h4>
+          <p className="detailCategory">{caravInnerFclty}</p>
         </>
       )}
 
       {glampInnerFclty && (
         <>
-          <h4 className="text-[17px] font-preten400 mb-2">글램핑 편의 시설</h4>
-          <p className="text-[17px] font-preten300 mb-2">{glampInnerFclty}</p>
+          <h4 className="detailCategory font-preten400">글램핑 편의 시설</h4>
+          <p className="detailCategory">{glampInnerFclty}</p>
         </>
       )}
     </>

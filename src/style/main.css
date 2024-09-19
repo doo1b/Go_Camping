@@ -68,7 +68,13 @@
 
 @layer components {
   .guideBox {
-    @apply whitespace-pre-line flex items-center justify-center w-full h-44 p-8 text-center rounded-3xl bg-gray-400 text-white cursor-pointer;
+    @apply flex items-center justify-center w-full p-8 text-center text-white whitespace-pre-line bg-gray-400 cursor-pointer h-44 rounded-3xl;
+  }
+  .detailSection {
+    @apply min-w-[600px] min-h-[300px]
+  }
+  .detailCategory {
+    @apply text-[17px] font-preten300 mb-2
   }
 }
 
