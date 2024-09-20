@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const DB_JSON_URL = "http://localhost:5000/campsiteList";
+const DB_JSON_URL = import.meta.env.VITE_DB_JSON_URL;
 
 export const getTotalCount = async () => {
   const response = await axios.get(`${DB_JSON_URL}?_page=1&_per_page=1`);

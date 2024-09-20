@@ -1,31 +1,35 @@
 import { useQuery } from "@tanstack/react-query";
-import axios from "axios";
 import useGuideStore from "../../store/guideStore";
 import ModalOverlay from "./ModalOverlay";
 import Modal from "./Modal";
 import { useSearchParams } from "react-router-dom";
 import VideoCard from "./VideoCard";
 import Loading from "../../assets/Loading";
+import axios from "axios";
 const YOUTUBE_API_KEY = import.meta.env.VITE_YOUTUBE_API_KEY;
 
 const VideoList = () => {
   const [searchCategory] = useSearchParams();
   const searchKeyword = searchCategory.get("category");
   const { isOpen } = useGuideStore();
+
   const params = {
     part: "snippet",
     q: searchKeyword,
-    maxResults: 12,
+    maxResults: 15,
     type: "video",
     regionCode: "KR",
     key: YOUTUBE_API_KEY
   };
 
   const getYoutubeData = async () => {
-    const response = axios.get("https://www.googleapis.com/youtube/v3/search", {
-      params
-    });
-    return (await response).data.items;
+    const response = await axios.get(
+      "https://www.googleapis.com/youtube/v3/search",
+      {
+        params
+      }
+    );
+    return response.data.items;
   };
 
   const { data, isLoading, isError, isPending } = useQuery({
@@ -35,7 +39,8 @@ const VideoList = () => {
     cacheTime: 1000 * 60 * 60 * 12,
     enabled: !!searchKeyword && searchKeyword.trim() !== "", // 검색어가 있을 때만 쿼리 실행
     refetchOnWindowFocus: false, // 포커스 변경 시 재요청 방지
-    refetchOnReconnect: false // 네트워크 재연결 시 재요청 방지
+    refetchOnReconnect: false, // 네트워크 재연결 시 재요청 방지
+    retry: 1
   });
 
   const videos = data?.map((video) => ({

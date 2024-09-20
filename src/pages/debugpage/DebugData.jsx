@@ -1,19 +1,19 @@
-import { useEffect } from 'react'
-import { postCampSites } from '../../api/getCampSite';
-import { deleteOneCampsite, getArray, getTotalCount } from '../../api/campSite';
+import { useEffect } from "react";
+import { postCampSites } from "../../api/getCampSite";
+import { deleteOneCampsite, getArray, getTotalCount } from "../../api/campSite";
 
 const DebugData = () => {
   useEffect(() => {
     const loadCampsites = async () => {
       try {
-        const {items:count} = await getTotalCount();
+        const { items: count } = await getTotalCount();
         console.log(count);
 
         const deleteCampsite = async (id) => {
           await deleteOneCampsite(id);
-        }
-        
-        if(count === 0) {
+        };
+
+        if (count === 0) {
           await postCampSites();
           console.log("삽입 완료");
         } else {
@@ -31,7 +31,7 @@ const DebugData = () => {
       } catch (error) {
         console.log(error);
       }
-    }
+    };
 
     loadCampsites();
   }, []);
@@ -39,11 +39,13 @@ const DebugData = () => {
   return (
     <div>
       <pre>
-db.json에 한국관광공사_고캠핑 정보 조회서비스 데이터를 삽입하기 위한 테스트페이지 입니다.
-<br/>정식 배포시에는 이 페이지랑 Route를 삭제하고 배포하셔야 합니다.
+        db.json에 한국관광공사_고캠핑 정보 조회서비스 데이터를 삽입하기 위한
+        테스트페이지 입니다.
+        <br />
+        정식 배포시에는 이 페이지랑 Route를 삭제하고 배포하셔야 합니다.
       </pre>
     </div>
-  )
-}
+  );
+};
 
-export default DebugData
+export default DebugData;

@@ -1,11 +1,7 @@
 import useGuideStore from "../../store/guideStore";
+import { decodeHtmlEntities } from "../../utils/decodeHtmlEntities";
 
 const VideoCard = ({ video }) => {
-  function decodeHtmlEntities(text) {
-    const parser = new DOMParser();
-    const doc = parser.parseFromString(text, "text/html");
-    return doc.documentElement.textContent;
-  }
   const { modalOpen, setSelectedVideo } = useGuideStore();
   return (
     <>
