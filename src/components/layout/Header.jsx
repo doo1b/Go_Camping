@@ -4,24 +4,21 @@ import guide from "../../../src/assets/header/header_guide.png";
 import WeatherDisplay from "../../components/mainpage/WeatherDisplay";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
-import useQuerys from "../../queries/useQuerys";
 
 const Header = () => {
   const [searchForm, setSearchForm] = useState("");
   const [keyword, setKeyword] = useState("");
   const [filteredCamps, setFilteredCamps] = useState([]);
   const navigate = useNavigate();
-  const { data: campsites } = useQuerys.useGetCampsitesQuery();
 
   const submitSearchForm = (e) => {
     e.preventDefault();
 
-    const results = campsites.filter((camp) => {
-      console.log(camp);
-      camp.facltNm.toLowerCase().includes(keyword.toLowerCase());
-    });
-    // 필터링된 결과를 setFilteredCamps에 저장
-    setFilteredCamps(results);
+    // const results = campsites.filter((camp) => {
+    //   camp.facltNm.toLowerCase().includes(keyword.toLowerCase());
+    // });
+    // // 필터링된 결과를 setFilteredCamps에 저장
+    // setFilteredCamps(results);
     navigate(`/searchresult?keyword=${keyword}`);
   };
 
@@ -62,6 +59,12 @@ const Header = () => {
             placeholder="캠핑장을 검색해 보세요."
             className="w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
           />
+          <button
+            type="submit"
+            className="absolute text-gray-500 transform -translate-y-1/2 right-2 top-1/2"
+          >
+            🔍
+          </button>
         </form>
       </div>
     </header>
