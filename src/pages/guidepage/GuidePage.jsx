@@ -1,5 +1,12 @@
+import GuideCategory from "../../components/guidepage/GuideCategory";
+
 const GuidePage = () => {
-  return <div>GuidePage</div>;
+
+  return (
+    <>
+      <GuideCategory />
+    </>
+  );
 };
 
 export default GuidePage;
