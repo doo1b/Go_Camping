@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Search from "../../assets/Search";
 
 const SearchDisplay = () => {
-  const [searchForm, setSearchForm]= useState('');
+  const [searchForm, setSearchForm] = useState("");
   const submitSearchForm = (e) => {
     e.preventDefault();
   };
@@ -15,7 +15,7 @@ const SearchDisplay = () => {
       <input
         type="text"
         value={searchForm}
-        onChange={(e)=>setSearchForm(e.target.value)}
+        onChange={(e) => setSearchForm(e.target.value)}
         placeholder="캠핑장을 검색해 보세요!"
         className="outline-none pl-1"
       />
