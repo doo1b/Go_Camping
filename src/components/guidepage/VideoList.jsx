@@ -48,7 +48,7 @@ const VideoList = () => {
   return (
     <>
       <div className="pb-10 pt-14 md:px-14 xs:px-8 font-preten400">
-        <span className="pb-2 border-b-2 xs:text-2xl sm:text-3xl border-campblue/50 text-campblue font-preten600">
+        <span className="pb-1 border-b-2 xs:text-2xl sm:text-3xl border-campblue/50 text-campblue font-preten600">
           {searchKeyword}
         </span>
         <div className="grid sm:grid-cols-[repeat(auto-fill,minmax(480px,1fr))] sm:gap-x-10 sm:gap-y-14 mt-12 xs:grid-cols-1 xs:gap-y-8">
