@@ -1,11 +1,13 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Search from "../../assets/Search";
+import { useNavigate } from "react-router-dom";
 
 const SearchDisplay = () => {
   const [searchForm, setSearchForm] = useState("");
-  const [keyword, setKeyword] = useState("");
+  const navigate = useNavigate();
   const submitSearchForm = (e) => {
     e.preventDefault();
+    navigate(`/searchresult?keyword=${searchForm}`);
   };
 
   return (
@@ -15,8 +17,8 @@ const SearchDisplay = () => {
     >
       <input
         type="text"
-        value={keyword}
-        onChange={(e) => setKeyword(e.target.value)}
+        value={searchForm}
+        onChange={(e) => setSearchForm(e.target.value)}
         placeholder="캠핑장을 검색해 보세요!"
         className="pl-1 outline-none"
       />
