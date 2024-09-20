@@ -17,7 +17,7 @@ const SearchDisplay = () => {
         value={searchForm}
         onChange={(e) => setSearchForm(e.target.value)}
         placeholder="캠핑장을 검색해 보세요!"
-        className="outline-none pl-1"
+        className="pl-1 outline-none"
       />
       <button>
         <Search />
