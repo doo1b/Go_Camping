@@ -3,9 +3,19 @@ import { useNavigate } from "react-router-dom";
 import logo from "../../../src/assets/indexpages/index_logo.png";
 import place from "../../../src/assets/indexpages/index_place.png";
 import guide from "../../../src/assets/indexpages/index_guide.png";
+import useCampsite from "../../hooks/useCampsite";
+import Loading from "../../assets/Loading";
 
 const IndexPage = () => {
   const nav = useNavigate();
+  const { isPending } = useCampsite();
+
+  if (isPending)
+    return (
+      <div className="fixed top-2/4 left-2/4 translate-x-[-50%] translate-y-[-50%]">
+        <Loading />
+      </div>
+    );
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-campblue">
       <div className="py-10">
