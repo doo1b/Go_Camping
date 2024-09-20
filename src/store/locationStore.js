@@ -1,5 +1,6 @@
 import { create } from "zustand";
 import { immer } from "zustand/middleware/immer";
+import { persist } from 'zustand/middleware';
 
 const initialState = {
   location: {
@@ -20,11 +21,13 @@ const initialState = {
 };
 
 export const useLocationStore = create(
-  immer((set) => ({
-    ...initialState,
-    setLocation: (updateLocation) =>
-      set((state) => ({ location: { ...state.location, ...updateLocation } })),
-    setCampsites: (campsites) => set(() => ({campsites: [ ...campsites ]})),
-    setCampsite: (campsite) => set(() => ({campsite: { ...campsite }})),
-  }))
+  immer(
+    persist((set) => ({
+      ...initialState,
+      setLocation: (updateLocation) =>
+        set((state) => ({ location: { ...state.location, ...updateLocation } })),
+      setCampsites: (campsites) => set(() => ({campsites: [ ...campsites ]})),
+      setCampsite: (campsite) => set(() => ({campsite: { ...campsite }})),
+    }), {name: "campsitesInfomation"})
+  )
 );

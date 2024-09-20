@@ -17,7 +17,16 @@ const formattedCampsitesData = (campsites, region) => {
     zipcode: campsite.zipcode,
     firstImageUrl: campsite.firstImageUrl || "",
     tel: campsite.tel || "",
-    homepage: campsite.homepage || ""
+    homepage: campsite.homepage || "",
+    lineIntro: campsite.lineIntro || "",
+    caravInnerFclty: campsite.caravInnerFclty || "",
+    glampInnerFclty: campsite.glampInnerFclty || "",
+    sbrsCl: campsite.sbrsCl || "",
+    sbrsEtc: campsite.sbrsEtc || "",
+    operPdCl: campsite.operPdCl || "",
+    operDeCl: campsite.operDeCl || "",
+    animalCmgCl: campsite.animalCmgCl || "",
+    induty: campsite.induty || ""
   }));
 
   return formattedCampsites;

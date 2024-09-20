@@ -5,7 +5,7 @@ import MainPage from "../pages/mainpage/MainPage";
 import SearchResultPage from "../pages/searchresultpage/SearchResultPage";
 import DetailPage from "../pages/detailpage/DetailPage";
 import GuidePage from "../pages/guidepage/GuidePage";
-import DebugData from "../pages/debugpage/debugData";
+import DebugData from "../pages/debugpage/DebugData";
 import VideoListPage from "../pages/guidepage/VideoListPage";
 import Layout from "../components/layout/Layout";
 

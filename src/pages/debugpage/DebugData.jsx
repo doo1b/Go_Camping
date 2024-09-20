@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { postCampSites } from '../../api/GetCampSite';
+import { postCampSites } from '../../api/getCampSite';
 import { deleteOneCampsite, getArray, getTotalCount } from '../../api/campSite';
 
 const DebugData = () => {

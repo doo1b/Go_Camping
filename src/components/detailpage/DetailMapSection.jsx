@@ -3,12 +3,12 @@ import CampsiteMap from "./CampsiteMap";
 const DetailMapSection = ({ campsite }) => {
   return (
     <section className="text-center detailSection">
-      {campsite?.mapY && campsite?.mapX && (
-        <CampsiteMap lat={campsite.mapY} lng={campsite.mapX} />
+      {campsite?.latlng && (
+        <CampsiteMap lat={campsite.latlng.lat} lng={campsite.latlng.lng} />
       )}
-      {campsite?.addr1 && (
+      {campsite?.addr && (
         <p className="detailCategory mt-2 mb-[60px]">
-          캠핑장 주소: {campsite.addr1}
+          캠핑장 주소: {campsite.addr}
         </p>
       )}
     </section>
