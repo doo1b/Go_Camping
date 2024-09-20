@@ -5,7 +5,7 @@ import campsiteFormatter from "../utils/campsiteFormatter";
 
 const useCampsite = () => {
   const setCampsites = useLocationStore((state) => state.setCampsites);
-  const { data: campsites } = useQuerys.useGetCampsitesQuery();
+  const { data: campsites, isPending } = useQuerys.useGetCampsitesQuery();
 
   const searchCampHandler = (region) => {
     setCampsites(campsiteFormatter.formattedCampsitesData(campsites, region));
@@ -13,6 +13,7 @@ const useCampsite = () => {
 
   return {
     searchCampHandler,
+    isPending
   };
 };
 
