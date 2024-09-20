@@ -1,10 +1,13 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Search from "../../assets/Search";
+import { useNavigate } from "react-router-dom";
 
 const SearchDisplay = () => {
   const [searchForm, setSearchForm] = useState("");
+  const navigate = useNavigate();
   const submitSearchForm = (e) => {
     e.preventDefault();
+    navigate(`/searchresult?keyword=${searchForm}`);
   };
 
   return (
