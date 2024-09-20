@@ -68,7 +68,41 @@
 
 @layer components {
   .guideBox {
-    @apply whitespace-pre-line flex items-center justify-center w-full h-44 p-8 text-center rounded-3xl bg-gray-400 text-white cursor-pointer;
+    @apply sm:text-base font-preten500 whitespace-pre-line flex items-center justify-center w-full aspect-square sm:p-8 text-center rounded-3xl bg-[#E4F1F3] text-campblue cursor-pointer hover:bg-campblue duration-100 hover:text-white xs:text-sm xs:p-4;
+  }
+
+  .guideCategoryBox {
+    @apply flex sm:items-center justify-center sm:h-[calc(100vh-90px)] font-preten400;
+  }
+
+  .categoryBox {
+    @apply grid sm:gap-12 sm:grid-cols-3 xs:grid-cols-2 xs:gap-4;
+  }
+
+  .modalCloseBtn {
+    @apply py-1 px-3 rounded-lg mt-4 text-xs cursor-pointer font-preten700 bg-[#E4F1F3] text-campblue hover:bg-campblue duration-100 hover:text-white;
+  }
+
+  .videoTitle {
+    @apply my-3 sm:text-xl text-justify text-wrap font-preten700 break-words overflow-hidden sm:text-overflow1 xs:text-overflow2 xs:text-lg;
+  }
+  .text-overflow1 {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+  }
+  .text-overflow2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+  }
+  .detailSection {
+    @apply min-w-[600px] min-h-[300px];
+  }
+  .detailCategory {
+    @apply text-[20px] font-preten300 mb-2;
   }
 }
 
@@ -84,5 +118,5 @@
   border-radius: 10px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(0, 0, 0, 0.3)
+  background: rgba(0, 0, 0, 0.3);
 }

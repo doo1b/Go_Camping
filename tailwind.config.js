@@ -21,6 +21,19 @@ export default {
       },
       boxShadow: {
         mainBoxShadow: "0 2px 8px rgba(0, 0, 0, 0.25)"
+      },
+      screens: {
+        xs: "0px",
+        // => @media (min-width: 0px) { ... }
+
+        sm: "640px",
+        // => @media (min-width: 640px) { ... }
+
+        md: "1024px",
+        // => @media (min-width: 1024px) { ... }
+
+        lg: "1280px"
+        // => @media (min-width: 1280px) { ... }
       }
     }
   },

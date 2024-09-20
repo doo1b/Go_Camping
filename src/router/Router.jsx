@@ -8,6 +8,8 @@ import DebugData from "../pages/debugpage/debugData";
 import VideoListPage from "../pages/guidepage/VideoListPage";
 import Layout from "../components/layout/Layout";
 
+// mac은 json-server port 5000으로 수정할것!!!!
+
 const Router = () => {
   return (
     <BrowserRouter>

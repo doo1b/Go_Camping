@@ -10,18 +10,25 @@ const VideoCard = ({ video }) => {
   return (
     <>
       <div
-        key={`${video.title}-${video.channelId}`}
         onClick={() => {
           modalOpen(), setSelectedVideo(video.videoId);
         }}
-        className="flex items-center h-[180px]"
+        className="flex flex-col cursor-pointer hover:scale-105 duration-100 max-w-[480px] xs:w-full xs:border-gray-300 xs:border-b-[1px] xs:pb-5 sm:border-none"
       >
-        <img src={video.thumbnails.medium.url} className="mr-3 rounded-lg" />
-        <div className="flex flex-col justify-around h-full">
-          <p className="text-xl text-wrap font-preten600">
-            {decodeHtmlEntities(video.title)}
-          </p>
-          <p>{video.channelTitle}</p>
+        <img
+          src={video.thumbnails.high.url}
+          className="object-cover rounded-lg aspect-video"
+        />
+        <div className="flex flex-col justify-start h-full pr-1">
+          <p className="videoTitle">{decodeHtmlEntities(video.title)}</p>
+          <div className="flex items-end justify-between">
+            <span className="text-over font-preten500">
+              {video.channelTitle}
+            </span>
+            <span className="text-xs font-preten200">
+              {video.publishTime.slice(0, 10)}
+            </span>
+          </div>
         </div>
       </div>
     </>

@@ -3,15 +3,15 @@ import SwitchToggle from "../../assets/SwitchToggle";
 import Logo from "../../assets/Logo";
 import { useNavigate } from "react-router-dom";
 import RegionCard from "./RegionCard";
-import campsiteFormatter from "../../utils/campsiteFormatter.js";
-import { useLocationStore } from "../../store/locationStore.js";
+import useCampsite from "../../hooks/useCampsite.js";
+import Loading from "../../assets/Loading.jsx";
 
 const regionObj = {
   seoul: "서울",
   gyeonggi: "경기도",
   incheon: "인천",
   gangwon: "강원도",
-  daejeonSejong: "대전 · 세종",
+  daejeonSejong: "대전 세종",
   chungcheong: "충청",
   daegu: "대전",
   jeolla: "전라",
@@ -23,13 +23,16 @@ const regionObj = {
 
 const SideBar = () => {
   const [isToggle, setIsToggle] = useState(false);
-  const setCampsites = useLocationStore((state) => state.setCampsites)
   const navigate = useNavigate();
-
-  const searchCampHandler = (region) => {
-    setCampsites(campsiteFormatter.formattedCampsitesData(region));
-  };
-
+  const { searchCampHandler } = useCampsite();
+  // console.log(isLoading);
+  // if (isLoading)
+  //   return (
+  //     <div className="fixed z-[100] top-2/4 left-2/4">
+  //       <Loading />
+  //     </div>
+  //   );
+  
   return (
     <aside
       className={`w-[300px] h-[calc(100vh-48px)] px-6 py-4 shadow-mainBoxShadow fixed z-10 flex top-6 left-6 rounded-2xl justify-center items-center bg-white transition-transform duration-300 ease-in-out ${

@@ -6,27 +6,36 @@ import guide from "../../../src/assets/indexpages/index_guide.png";
 
 const IndexPage = () => {
   const nav = useNavigate();
-
   return (
-    <div className="bg-campblue min-h-screen flex flex-col justify-center">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-campblue">
       <div className="py-10">
-        <img className="m-auto" src={logo} alt="로고 이미지" />
+        <img className="w-[500px] m-auto" src={logo} alt="로고 이미지" />
       </div>
       <div>
-        <div className="flex justify-center gap-x-60">
+        <div className="flex justify-between w-[500px] mt-6">
           <button
             type="button"
             onClick={() => nav("/main")}
-            className="transition transform hover:bg-opacity-110 active:scale-90"
+            className="transition-transform duration-300 transform hover:bg-opacity-110 active:scale-90 hover:scale-110"
           >
-            <img key="true" src={place} alt="메인 페이지 이동 이미지" />
+            <img
+              key="true"
+              className="w-28"
+              src={place}
+              alt="메인 페이지 이동 이미지"
+            />
           </button>
           <button
             type="button"
             onClick={() => nav("/guide")}
-            className="transition transform hover:bg-opacity-110 active:scale-90"
+            className="transition-transform duration-300 transform hover:bg-opacity-110 active:scale-90 hover:scale-110"
           >
-            <img key="true" src={guide} alt="영상 가이드 페이지 이미지" />
+            <img
+              key="true"
+              className="w-28"
+              src={guide}
+              alt="영상 가이드 페이지 이미지"
+            />
           </button>
         </div>
       </div>
