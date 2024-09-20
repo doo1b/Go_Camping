@@ -5,6 +5,7 @@ import ModalOverlay from "./ModalOverlay";
 import Modal from "./Modal";
 import { useSearchParams } from "react-router-dom";
 import VideoCard from "./VideoCard";
+import Loading from "../../assets/Loading";
 const YOUTUBE_API_KEY = import.meta.env.VITE_YOUTUBE_API_KEY;
 
 const VideoList = () => {
@@ -16,6 +17,7 @@ const VideoList = () => {
     q: searchKeyword,
     maxResults: 12,
     type: "video",
+    regionCode: "KR",
     key: YOUTUBE_API_KEY
   };
 
@@ -41,7 +43,12 @@ const VideoList = () => {
     ...video.snippet
   }));
 
-  if (isLoading || isPending) return <div>로딩중...</div>;
+  if (isLoading || isPending)
+    return (
+      <div className="flex items-center justify-center h-[calc(100vh-95px)]">
+        <Loading />
+      </div>
+    );
 
   if (isError) return <div>에러 발생...</div>;
 

@@ -72,7 +72,7 @@
   }
 
   .guideCategoryBox {
-    @apply flex sm:items-center justify-center sm:h-[calc(100vh-95px)] font-preten400;
+    @apply flex sm:items-center justify-center sm:h-[calc(100vh-90px)] font-preten400;
   }
 
   .categoryBox {
