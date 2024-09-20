@@ -2,7 +2,7 @@ import axios from "axios";
 
 const GOCAMPING_KEY = import.meta.env.VITE_GOCAMPING_KEY;
 const GO_CAMP_URL = "https://apis.data.go.kr/B551011/GoCamping/basedList";
-const DB_JSON_URL = "https://dapper-verdant-viscose.glitch.me/campsiteList";
+const DB_JSON_URL = import.meta.env.VITE_DB_JSON_URL;
 
 const getTotalCount = async () => {
   const response = await axios.get(
