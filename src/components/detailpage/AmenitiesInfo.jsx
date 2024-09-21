@@ -9,7 +9,7 @@ const AmenitiesInfo = ({ caravInnerFclty, glampInnerFclty }) => {
   const displayedFacilities = combinedFacilities.slice(0, 8);
 
   return (
-    <div className="h-[137px]">
+    <div className="h-[130px]">
       <h4 className="detailCategory font-preten500">편의 시설</h4>
       <div className="grid grid-cols-4 w-[700px] gap-10px">
         {displayedFacilities.length > 0 ? (

@@ -10,7 +10,7 @@ const DetailInfo = ({ campsite }) => {
           caravInnerFclty={campsite?.caravInnerFclty}
           glampInnerFclty={campsite?.glampInnerFclty}
         />
-        <hr className="w-[700px] my-3" />
+        <hr className="w-[700px] my-5" />
         <FacilityInfo sbrsCl={campsite?.sbrsCl} sbrsEtc={campsite?.sbrsEtc} />
       </div>
 
