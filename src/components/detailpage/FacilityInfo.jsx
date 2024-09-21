@@ -14,7 +14,7 @@ const FacilityInfo = ({ sbrsCl, sbrsEtc }) => {
       <div className="grid grid-cols-4 w-[700px] gap-10px">
         {displayedFacilities.length > 0 ? (
           displayedFacilities.map((facility) => (
-            <div key={facility.trim()} className="mb-0 detailCategory">
+            <div key={facility.trim()} className="detailCategory">
               {facility.trim()}
             </div>
           ))
