@@ -18,7 +18,6 @@ export const getCampsites = async () => {
 };
 
 export const getOneCampsite = async (contentId) => {
-  console.log(contentId);
   const data = await getCampsites();
   return data.filter((campsite) => campsite.contentId === contentId.contentId);
 };

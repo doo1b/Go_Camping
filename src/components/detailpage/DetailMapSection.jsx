@@ -1,7 +1,6 @@
 import CampsiteMap from "./CampsiteMap";
 
 const DetailMapSection = ({ campsite }) => {
-  console.log(campsite);
   return (
     <section className="detailSection mt-[32px]">
       <h3 className="mb-5 text-lg detailCategory font-preten600">
