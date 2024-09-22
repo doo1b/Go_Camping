@@ -102,7 +102,7 @@
     @apply min-w-[600px] min-h-[300px];
   }
   .detailCategory {
-    @apply text-[20px] font-preten300 mb-2;
+    @apply font-preten400 mb-2;
   }
 }
 

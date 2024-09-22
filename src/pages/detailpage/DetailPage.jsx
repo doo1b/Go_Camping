@@ -1,4 +1,3 @@
-import DetailPageTitle from "../../components/detailpage/DetailPageTitle";
 import DetailPageBody from "../../components/detailpage/DetailPageBody";
 import { useLocationStore } from "../../store/locationStore";
 
@@ -7,7 +6,6 @@ const DetailPage = () => {
 
   return (
     <>
-      <DetailPageTitle campsite={campsite} />
       <DetailPageBody campsite={campsite} />
     </>
   );
