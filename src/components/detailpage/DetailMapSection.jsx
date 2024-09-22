@@ -2,7 +2,8 @@ import CampsiteMap from "./CampsiteMap";
 
 const DetailMapSection = ({ campsite }) => {
   return (
-    <section className="text-center detailSection">
+    <section className="detailSection">
+      <h3 className="detailCategory text-[24px] mb-4 font-preten400">위치</h3>
       {campsite?.latlng && (
         <CampsiteMap lat={campsite.latlng.lat} lng={campsite.latlng.lng} />
       )}
