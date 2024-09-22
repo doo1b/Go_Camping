@@ -11,7 +11,7 @@ const Header = () => {
   const onWeatherDisplay = location.pathname.startsWith("/detail");
 
   return (
-    <header className="font-preten400 text-sm bg-campblue p-4 flex items-center justify-between sticky top-0 z-50 h-[90px]">
+    <header className="font-preten400 text-sm bg-campblue pr-6 pl-10 flex items-center justify-between sticky top-0 z-50 h-[90px]">
       <div className="flex-shrink-0 w-24">
         <Link to="/main">
           <img src={logo} alt="로고 이미지 메인으로 이동" />

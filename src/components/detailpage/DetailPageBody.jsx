@@ -6,14 +6,14 @@ import DetailPageTitle from "./DetailPageTitle";
 const DetailPageBody = ({ campsite }) => {
   return (
     <>
-      <div className="w-[1120px] mx-auto mt-6">
+      <div className="md:w-[1120px] mx-auto mt-12">
         <DetailImage campsite={campsite} />
       </div>
-      <div className="w-[1120px] mx-auto">
+      <div className="md:w-[1120px] mx-auto">
         <DetailPageTitle campsite={campsite} />
-        <hr className="my-5 w-[1120px] mx-auto border-1" />
+        <hr className="my-5 md:w-[1120px] mx-auto border-1" />
         <DetailInfo campsite={campsite} />
-        <hr className="my-5 w-[1120px] mx-auto border-1" />
+        <hr className="my-5 md:w-[1120px] mx-auto border-1" />
       </div>
       <div className="w-[1120px] mx-auto">
         <DetailMapSection campsite={campsite} />
