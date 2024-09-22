@@ -17,7 +17,6 @@ export const postCampSites = async () => {
     `${GO_CAMP_URL}?numOfRows=${length}&pageNo=1&MobileOS=ETC&MobileApp=gocamping&serviceKey=${GOCAMPING_KEY}&_type=Json`
   );
   const campsiteList = response.data.response.body.items.item;
-  console.log(Array.isArray(campsiteList));
   await axios.post(
     `${DB_JSON_URL}`,
     JSON.stringify({ campsiteList }, null, 2),
