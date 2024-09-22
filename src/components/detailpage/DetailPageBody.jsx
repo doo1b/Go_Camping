@@ -1,23 +1,21 @@
-import DetailPageLogo from "../../assets/DetailPageLogo";
+import DetailImage from "./DetailImage";
 import DetailInfo from "./DetailInfo";
 import DetailMapSection from "./DetailMapSection";
+import DetailPageTitle from "./DetailPageTitle";
 
 const DetailPageBody = ({ campsite }) => {
   return (
     <>
-      <div className="flex flex-wrap justify-center gap-10">
-        <section className="detailSection w-[600px]">
-          <>
-            {campsite?.firstImageUrl !== "" ? (
-              <img src={campsite?.firstImageUrl} className="rounded-2xl" />
-            ) : (
-              <DetailPageLogo />
-            )}
-          </>
-        </section>
-        <DetailInfo campsite={campsite} />
+      <div className="md:w-[1120px] mx-auto mt-12">
+        <DetailImage campsite={campsite} />
       </div>
-      <div className="w-[600px] mt-10 mx-auto">
+      <div className="md:w-[1120px] mx-auto">
+        <DetailPageTitle campsite={campsite} />
+        <hr className="my-5 md:w-[1120px] mx-auto border-1" />
+        <DetailInfo campsite={campsite} />
+        <hr className="my-5 md:w-[1120px] mx-auto border-1" />
+      </div>
+      <div className="w-[1120px] mx-auto">
         <DetailMapSection campsite={campsite} />
       </div>
     </>
