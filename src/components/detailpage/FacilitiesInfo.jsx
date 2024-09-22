@@ -1,8 +1,8 @@
-const AmenitiesInfo = ({ caravInnerFclty, glampInnerFclty }) => {
+const FacilitiesInfo = ({ title, facilities1, facilities2 }) => {
   // 두 문자열을 배열로 변환하고 합친 후, 중복 제거
   const combinedFacilities = [...new Set([
-    ...(caravInnerFclty ? caravInnerFclty.split(",") : []),
-    ...(glampInnerFclty ? glampInnerFclty.split(",") : [])
+    ...(facilities1 ? facilities1.split(",") : []),
+    ...(facilities2 ? facilities2.split(",") : [])
   ])];
 
   // 최대 8개 항목만 선택
@@ -10,7 +10,7 @@ const AmenitiesInfo = ({ caravInnerFclty, glampInnerFclty }) => {
 
   return (
     <div className="h-[130px]">
-      <h4 className="detailCategory font-preten500">편의 시설</h4>
+      <h4 className="detailCategory font-preten500">{title}</h4>
       <div className="grid grid-cols-4 w-[700px] gap-10px">
         {displayedFacilities.length > 0 ? (
           displayedFacilities.map((facility) => (
@@ -26,4 +26,4 @@ const AmenitiesInfo = ({ caravInnerFclty, glampInnerFclty }) => {
   );
 };
 
-export default AmenitiesInfo;
+export default FacilitiesInfo;
