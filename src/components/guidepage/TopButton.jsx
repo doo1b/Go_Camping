@@ -8,7 +8,7 @@ const TopButton = () => {
   return (
     <div
       onClick={scrollToTop}
-      className="fixed flex items-center justify-center w-10 h-10 text-white rounded-full cursor-pointer bg-campblue bottom-6 right-4"
+      className="fixed flex items-center justify-center w-8 h-8 text-xs text-white rounded-full cursor-pointer bg-campblue bottom-6 right-4"
     >
       ▲
     </div>
