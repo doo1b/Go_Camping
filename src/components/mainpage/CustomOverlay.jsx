@@ -44,7 +44,7 @@ const CustomOverlay = ({ campsite, setIsOpen }) => {
             e.stopPropagation();
             navigate(`/detail/${campsite.contentId}`);
           }}
-          className="w-full h-[48px] mt-4 bg-campblue hover:bg-[#294d55] text-white"
+          className="w-full h-[48px] mt-4 bg-campblue hover:bg-[#294d55] rounded-b-md text-white"
         >
           상세보기
         </button>

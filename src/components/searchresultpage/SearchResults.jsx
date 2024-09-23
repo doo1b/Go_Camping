@@ -2,9 +2,8 @@ import { useNavigate } from "react-router-dom";
 import { useLocationStore } from "../../store/locationStore";
 
 const SearchResults = ({ filteredCamps }) => {
-  const { setCampsite } = useLocationStore();
+  const { setCampsite, setLocation } = useLocationStore();
   const navgate = useNavigate();
-
   return (
     <ul className="grid grid-cols-[repeat(2,minmax(500px,1fr))] gap-y-10 gap-x-20 border-t-[1px] pt-10 mt-2">
       {filteredCamps.map((camp) => (
@@ -13,8 +12,15 @@ const SearchResults = ({ filteredCamps }) => {
           className="flex flex-row h-48 border-b-[1px] pb-10"
           onClick={() => {
             setCampsite(camp), navgate(`/detail/${camp.contentId}`);
+            setLocation({
+              center: {
+                lat: camp.mapY,
+                lng: camp.mapX,
+              }
+            })
           }}
         >
+          
           <img
             src={
               camp.firstImageUrl
